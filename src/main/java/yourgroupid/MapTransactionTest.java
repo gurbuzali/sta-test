@@ -61,6 +61,7 @@ public class MapTransactionTest {
 
     @Warmup(global = true)
     public void warmup() throws Exception {
+        Thread.sleep(5000);
         for (int k = 0; k < keyCount; k++) {
             map.put(k, 0l);
         }
