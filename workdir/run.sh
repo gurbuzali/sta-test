@@ -14,5 +14,4 @@ coordinator     --workerVmOptions "-ea -server -Xms2G -Xmx2G -XX:+PrintGC -XX:+H
 
 provisioner --download
 
-
 #provisioner --terminate
