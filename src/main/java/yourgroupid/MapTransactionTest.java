@@ -14,7 +14,6 @@ import com.hazelcast.stabilizer.tests.annotations.Teardown;
 import com.hazelcast.stabilizer.tests.annotations.Verify;
 import com.hazelcast.stabilizer.tests.annotations.Warmup;
 import com.hazelcast.stabilizer.tests.utils.ThreadSpawner;
-import com.hazelcast.transaction.TransactionContext;
 import com.hazelcast.transaction.TransactionException;
 import com.hazelcast.transaction.TransactionalTask;
 import com.hazelcast.transaction.TransactionalTaskContext;
@@ -51,7 +50,7 @@ public class MapTransactionTest {
         targetInstance = testContext.getTargetInstance();
         mapName = basename + "-" + testContext.getTestId();
         map = targetInstance.getMap(mapName);
-        resultsPerWorker = targetInstance.getMap(basename+"ResultMap" + testContext.getTestId());
+        resultsPerWorker = targetInstance.getMap(basename + "ResultMap" + testContext.getTestId());
     }
 
     @Teardown
@@ -118,18 +117,18 @@ public class MapTransactionTest {
                 final Integer key = random.nextInt(keyCount);
                 final long increment = random.nextInt(100);
 
-                final TransactionContext txContext = targetInstance.newTransactionContext();
-                txContext.beginTransaction();
-                try {
-                    TransactionalMap<Integer, Long> map = txContext.getMap(mapName);
-                    Long current = map.getForUpdate(key);
-                    Long update = current + increment;
-                    map.put(key, update);
-                    txContext.commitTransaction();
-                    increment(key, increment);
-                } catch (Throwable t) {
-                    txContext.rollbackTransaction();
-                }
+                targetInstance.executeTransaction(new TransactionalTask<Object>() {
+                    @Override
+                    public Object execute(TransactionalTaskContext txContext) throws TransactionException {
+                        TransactionalMap<Integer, Long> map = txContext.getMap(mapName);
+                        Long current = map.getForUpdate(key);
+                        Long update = current + increment;
+                        map.put(key, update);
+                        return null;
+                    }
+                });
+
+                increment(key, increment);
 
                 if (iteration % logFrequency == 0) {
                     log.info(Thread.currentThread().getName() + " At iteration: " + iteration);
@@ -155,3 +154,4 @@ public class MapTransactionTest {
         new TestRunner(test).run();
     }
 }
+
