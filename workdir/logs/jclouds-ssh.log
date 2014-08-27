@@ -1,0 +1,942 @@
+2014-07-14 17:04:32,343 DEBUG [jclouds.ssh] [user thread 0] >> (ec2-user:rsa[fingerprint(f7:e0:15:56:e3:22:71:45:55:45:24:37:0f:52:0c:fd),sha1(a3:a9:4a:c4:d4:91:ad:96:1b:53:4b:2e:bf:d2:0f:7d:3a:5d:c9:a6)]@54.91.177.227:22) acquiring {hostAndPort=54.91.177.227:22, loginUser=ec2-user, ssh=null, connectTimeout=60000, sessionTimeout=60000}
+2014-07-14 17:04:32,441 DEBUG [net.schmizz.sshj.common.SecurityUtils] [user thread 0] Trying to register BouncyCastle as a JCE provider
+2014-07-14 17:04:32,846 INFO  [net.schmizz.sshj.common.SecurityUtils] [user thread 0] BouncyCastle registration succeeded
+2014-07-14 17:04:33,186 INFO  [net.schmizz.sshj.transport.TransportImpl] [user thread 0] Client identity string: SSH-2.0-SSHJ_0_8_1_SNAPSHOT
+2014-07-14 17:04:34,470 INFO  [net.schmizz.sshj.transport.TransportImpl] [user thread 0] Server identity string: SSH-2.0-OpenSSH_6.2
+2014-07-14 17:04:34,471 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Setting <<kex done>> to `null`
+2014-07-14 17:04:34,471 DEBUG [net.schmizz.sshj.transport.KeyExchanger] [user thread 0] Sending SSH_MSG_KEXINIT
+2014-07-14 17:04:34,476 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Setting <<kexinit sent>> to `SOME`
+2014-07-14 17:04:34,476 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Awaiting <<kex done>>
+2014-07-14 17:04:36,255 DEBUG [net.schmizz.sshj.transport.KeyExchanger] [reader] Received SSH_MSG_KEXINIT
+2014-07-14 17:04:36,256 DEBUG [net.schmizz.sshj.transport.KeyExchanger] [reader] Negotiated algorithms: [ kex=diffie-hellman-group14-sha1; sig=ssh-rsa; c2sCipher=aes128-ctr; s2cCipher=aes128-ctr; c2sMAC=hmac-sha1; s2cMAC=hmac-sha1; c2sComp=none; s2cComp=none ]
+2014-07-14 17:04:36,291 DEBUG [net.schmizz.sshj.transport.kex.DHG14] [reader] Sending SSH_MSG_KEXDH_INIT
+2014-07-14 17:04:50,138 DEBUG [net.schmizz.sshj.transport.KeyExchanger] [reader] Received kex followup data
+2014-07-14 17:04:50,138 DEBUG [net.schmizz.sshj.transport.kex.DHG14] [reader] Received SSH_MSG_KEXDH_REPLY
+2014-07-14 17:04:50,192 DEBUG [net.schmizz.sshj.transport.KeyExchanger] [reader] Trying to verify host key with net.schmizz.sshj.transport.verification.PromiscuousVerifier@2b5d925b
+2014-07-14 17:04:50,192 DEBUG [net.schmizz.sshj.transport.KeyExchanger] [reader] Sending SSH_MSG_NEWKEYS
+2014-07-14 17:04:50,192 DEBUG [net.schmizz.sshj.transport.KeyExchanger] [reader] Received SSH_MSG_NEWKEYS
+2014-07-14 17:04:50,195 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<kexinit sent>> to `null`
+2014-07-14 17:04:50,195 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<kex done>> to `SOME`
+2014-07-14 17:04:50,195 DEBUG [net.schmizz.sshj.SSHClient] [user thread 0] Key exchange took 15.724 seconds
+2014-07-14 17:04:50,211 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Setting <<service accept>> to `null`
+2014-07-14 17:04:50,211 DEBUG [net.schmizz.sshj.transport.TransportImpl] [user thread 0] Sending SSH_MSG_SERVICE_REQUEST for ssh-userauth
+2014-07-14 17:04:50,211 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Awaiting <<service accept>>
+2014-07-14 17:04:51,640 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<service accept>> to `SOME`
+2014-07-14 17:04:51,640 DEBUG [net.schmizz.sshj.transport.TransportImpl] [user thread 0] Setting active service to ssh-userauth
+2014-07-14 17:04:51,641 DEBUG [net.schmizz.sshj.userauth.UserAuthImpl] [user thread 0] Trying `publickey` auth...
+2014-07-14 17:04:51,641 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Setting <<authenticated>> to `null`
+2014-07-14 17:04:51,641 DEBUG [net.schmizz.sshj.userauth.method.AuthPublickey] [user thread 0] Attempting authentication using PKCS8KeyFile{resource=[PrivateKeyStringResource]}
+2014-07-14 17:04:51,667 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Awaiting <<authenticated>>
+2014-07-14 17:04:52,435 DEBUG [net.schmizz.sshj.userauth.UserAuthImpl] [reader] Asking `publickey` method to handle USERAUTH_60 packet
+2014-07-14 17:04:52,435 DEBUG [net.schmizz.sshj.userauth.method.AuthPublickey] [reader] Key acceptable, sending signed request
+2014-07-14 17:04:52,436 DEBUG [net.schmizz.sshj.userauth.method.AuthPublickey] [reader] Attempting authentication using PKCS8KeyFile{resource=[PrivateKeyStringResource]}
+2014-07-14 17:04:53,194 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<authenticated>> to `SOME`
+2014-07-14 17:04:53,194 DEBUG [net.schmizz.sshj.userauth.UserAuthImpl] [user thread 0] `publickey` auth successful
+2014-07-14 17:04:53,194 DEBUG [net.schmizz.sshj.transport.TransportImpl] [user thread 0] Setting active service to ssh-connection
+2014-07-14 17:04:53,194 DEBUG [jclouds.ssh] [user thread 0] << (ec2-user:rsa[fingerprint(f7:e0:15:56:e3:22:71:45:55:45:24:37:0f:52:0c:fd),sha1(a3:a9:4a:c4:d4:91:ad:96:1b:53:4b:2e:bf:d2:0f:7d:3a:5d:c9:a6)]@54.91.177.227:22) acquired net.schmizz.sshj.SSHClient@51970991
+2014-07-14 17:04:53,288 DEBUG [jclouds.ssh] [user thread 0] >> (ec2-user:rsa[fingerprint(f7:e0:15:56:e3:22:71:45:55:45:24:37:0f:52:0c:fd),sha1(a3:a9:4a:c4:d4:91:ad:96:1b:53:4b:2e:bf:d2:0f:7d:3a:5d:c9:a6)]@54.91.177.227:22) acquiring Put(path=[/tmp/init-bootstrap])
+2014-07-14 17:04:53,288 DEBUG [jclouds.ssh] [user thread 0] >> (ec2-user:rsa[fingerprint(f7:e0:15:56:e3:22:71:45:55:45:24:37:0f:52:0c:fd),sha1(a3:a9:4a:c4:d4:91:ad:96:1b:53:4b:2e:bf:d2:0f:7d:3a:5d:c9:a6)]@54.91.177.227:22) acquiring SFTPClient()
+2014-07-14 17:04:53,301 DEBUG [net.schmizz.sshj.connection.ConnectionImpl] [user thread 0] Attaching `session` channel (#0)
+2014-07-14 17:04:53,301 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Awaiting <<chan#0 / open>>
+2014-07-14 17:04:53,842 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Initialized - < session channel: id=0, recipient=0, localWin=[winSize=2097152], remoteWin=[winSize=0] >
+2014-07-14 17:04:53,842 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#0 / open>> to `SOME`
+2014-07-14 17:04:53,842 INFO  [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 0] Will request `sftp` subsystem
+2014-07-14 17:04:53,842 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 0] Sending channel request for `subsystem`
+2014-07-14 17:04:53,843 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Awaiting <<chan#0 / chanreq for subsystem>>
+2014-07-14 17:04:54,838 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Received window adjustment for 2097152 bytes
+2014-07-14 17:04:54,838 DEBUG [net.schmizz.sshj.connection.channel.Window$Remote] [reader] Increasing by 2097152 up to 2097152
+2014-07-14 17:04:54,839 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#0 / chanreq for subsystem>> to `SOME`
+2014-07-14 17:04:54,845 DEBUG [net.schmizz.sshj.connection.channel.Window$Remote] [user thread 0] Consuming by 9 down to 2097143
+2014-07-14 17:04:55,083 DEBUG [net.schmizz.sshj.connection.channel.Window$Local] [reader] Consuming by 128 down to 2097024
+2014-07-14 17:04:55,084 DEBUG [net.schmizz.sshj.sftp.SFTPEngine] [user thread 0] Server version 3
+2014-07-14 17:04:55,090 DEBUG [jclouds.ssh] [user thread 0] << (ec2-user:rsa[fingerprint(f7:e0:15:56:e3:22:71:45:55:45:24:37:0f:52:0c:fd),sha1(a3:a9:4a:c4:d4:91:ad:96:1b:53:4b:2e:bf:d2:0f:7d:3a:5d:c9:a6)]@54.91.177.227:22) acquired net.schmizz.sshj.sftp.SFTPClient@1544e44
+2014-07-14 17:04:55,093 DEBUG [net.schmizz.sshj.xfer.LoggingTransferListener] [user thread 0] started transferring file `/tmp/init-bootstrap` (4834 bytes)
+2014-07-14 17:04:55,093 DEBUG [net.schmizz.sshj.sftp.SFTPEngine] [user thread 0] Sending Request{1;STAT}
+2014-07-14 17:04:55,093 DEBUG [net.schmizz.sshj.connection.channel.Window$Remote] [user thread 0] Consuming by 32 down to 2097111
+2014-07-14 17:04:55,094 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Awaiting <<sftp / 1>>
+2014-07-14 17:04:55,269 DEBUG [net.schmizz.sshj.connection.channel.Window$Local] [reader] Consuming by 33 down to 2096991
+2014-07-14 17:04:55,270 DEBUG [net.schmizz.sshj.sftp.PacketReader] [sftp reader] Received STATUS packet
+2014-07-14 17:04:55,271 DEBUG [net.schmizz.concurrent.Promise] [sftp reader] Setting <<sftp / 1>> to `Buffer [rpos=5, wpos=29, size=29]`
+2014-07-14 17:04:55,272 DEBUG [net.schmizz.sshj.sftp.SFTPFileTransfer] [user thread 0] probeFile: /tmp/init-bootstrap does not exist
+2014-07-14 17:04:55,279 DEBUG [net.schmizz.sshj.sftp.SFTPEngine] [user thread 0] Sending Request{2;OPEN}
+2014-07-14 17:04:55,279 DEBUG [net.schmizz.sshj.connection.channel.Window$Remote] [user thread 0] Consuming by 40 down to 2097071
+2014-07-14 17:04:55,280 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Awaiting <<sftp / 2>>
+2014-07-14 17:04:55,441 DEBUG [net.schmizz.sshj.connection.channel.Window$Local] [reader] Consuming by 17 down to 2096974
+2014-07-14 17:04:55,442 DEBUG [net.schmizz.sshj.sftp.PacketReader] [sftp reader] Received HANDLE packet
+2014-07-14 17:04:55,442 DEBUG [net.schmizz.concurrent.Promise] [sftp reader] Setting <<sftp / 2>> to `Buffer [rpos=5, wpos=13, size=13]`
+2014-07-14 17:04:55,445 DEBUG [net.schmizz.sshj.sftp.SFTPEngine] [user thread 0] Sending Request{3;WRITE}
+2014-07-14 17:04:55,448 DEBUG [net.schmizz.sshj.connection.channel.Window$Remote] [user thread 0] Consuming by 4863 down to 2092208
+2014-07-14 17:04:55,448 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Awaiting <<sftp / 3>>
+2014-07-14 17:04:55,664 DEBUG [net.schmizz.sshj.connection.channel.Window$Local] [reader] Consuming by 28 down to 2096946
+2014-07-14 17:04:55,664 DEBUG [net.schmizz.sshj.sftp.PacketReader] [sftp reader] Received STATUS packet
+2014-07-14 17:04:55,664 DEBUG [net.schmizz.concurrent.Promise] [sftp reader] Setting <<sftp / 3>> to `Buffer [rpos=5, wpos=24, size=24]`
+2014-07-14 17:04:55,664 DEBUG [net.schmizz.sshj.common.StreamCopier] [user thread 0] 4.720703125 KiB transferred  in 0.219 seconds (21.55572203196347 KiB/s)
+2014-07-14 17:04:55,665 DEBUG [net.schmizz.sshj.sftp.RemoteFile] [user thread 0] Closing `RemoteResource{/tmp/init-bootstrap}`
+2014-07-14 17:04:55,665 DEBUG [net.schmizz.sshj.sftp.SFTPEngine] [user thread 0] Sending Request{4;CLOSE}
+2014-07-14 17:04:55,665 DEBUG [net.schmizz.sshj.connection.channel.Window$Remote] [user thread 0] Consuming by 17 down to 2092191
+2014-07-14 17:04:55,665 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Awaiting <<sftp / 4>>
+2014-07-14 17:04:55,854 DEBUG [net.schmizz.sshj.connection.channel.Window$Local] [reader] Consuming by 28 down to 2096918
+2014-07-14 17:04:55,855 DEBUG [net.schmizz.sshj.sftp.PacketReader] [sftp reader] Received STATUS packet
+2014-07-14 17:04:55,855 DEBUG [net.schmizz.concurrent.Promise] [sftp reader] Setting <<sftp / 4>> to `Buffer [rpos=5, wpos=24, size=24]`
+2014-07-14 17:04:55,856 DEBUG [net.schmizz.sshj.sftp.SFTPEngine] [user thread 0] Sending Request{5;SETSTAT}
+2014-07-14 17:04:55,857 DEBUG [net.schmizz.sshj.connection.channel.Window$Remote] [user thread 0] Consuming by 40 down to 2092151
+2014-07-14 17:04:55,857 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Awaiting <<sftp / 5>>
+2014-07-14 17:04:56,063 DEBUG [net.schmizz.sshj.connection.channel.Window$Local] [reader] Consuming by 28 down to 2096890
+2014-07-14 17:04:56,064 DEBUG [net.schmizz.sshj.sftp.PacketReader] [sftp reader] Received STATUS packet
+2014-07-14 17:04:56,064 DEBUG [net.schmizz.concurrent.Promise] [sftp reader] Setting <<sftp / 5>> to `Buffer [rpos=5, wpos=24, size=24]`
+2014-07-14 17:04:56,064 DEBUG [jclouds.ssh] [user thread 0] << (ec2-user:rsa[fingerprint(f7:e0:15:56:e3:22:71:45:55:45:24:37:0f:52:0c:fd),sha1(a3:a9:4a:c4:d4:91:ad:96:1b:53:4b:2e:bf:d2:0f:7d:3a:5d:c9:a6)]@54.91.177.227:22) acquired null
+2014-07-14 17:04:56,067 DEBUG [jclouds.ssh] [user thread 0] >> (ec2-user:rsa[fingerprint(f7:e0:15:56:e3:22:71:45:55:45:24:37:0f:52:0c:fd),sha1(a3:a9:4a:c4:d4:91:ad:96:1b:53:4b:2e:bf:d2:0f:7d:3a:5d:c9:a6)]@54.91.177.227:22) acquiring ExecResponse(command=[chmod 755 /tmp/init-bootstrap])
+2014-07-14 17:04:56,068 DEBUG [jclouds.ssh] [user thread 0] >> (ec2-user:rsa[fingerprint(f7:e0:15:56:e3:22:71:45:55:45:24:37:0f:52:0c:fd),sha1(a3:a9:4a:c4:d4:91:ad:96:1b:53:4b:2e:bf:d2:0f:7d:3a:5d:c9:a6)]@54.91.177.227:22) acquiring Session()
+2014-07-14 17:04:56,068 DEBUG [net.schmizz.sshj.connection.ConnectionImpl] [user thread 0] Attaching `session` channel (#1)
+2014-07-14 17:04:56,069 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Awaiting <<chan#1 / open>>
+2014-07-14 17:04:56,342 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Initialized - < session channel: id=1, recipient=1, localWin=[winSize=2097152], remoteWin=[winSize=0] >
+2014-07-14 17:04:56,342 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#1 / open>> to `SOME`
+2014-07-14 17:04:56,344 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 0] Sending channel request for `pty-req`
+2014-07-14 17:04:56,344 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Awaiting <<chan#1 / chanreq for pty-req>>
+2014-07-14 17:04:56,569 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#1 / chanreq for pty-req>> to `SOME`
+2014-07-14 17:04:56,569 DEBUG [jclouds.ssh] [user thread 0] << (ec2-user:rsa[fingerprint(f7:e0:15:56:e3:22:71:45:55:45:24:37:0f:52:0c:fd),sha1(a3:a9:4a:c4:d4:91:ad:96:1b:53:4b:2e:bf:d2:0f:7d:3a:5d:c9:a6)]@54.91.177.227:22) acquired < session channel: id=1, recipient=1, localWin=[winSize=2097152], remoteWin=[winSize=0] >
+2014-07-14 17:04:56,570 INFO  [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 0] Will request to exec `chmod 755 /tmp/init-bootstrap`
+2014-07-14 17:04:56,570 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 0] Sending channel request for `exec`
+2014-07-14 17:04:56,570 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Awaiting <<chan#1 / chanreq for exec>>
+2014-07-14 17:04:56,886 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Received window adjustment for 2097152 bytes
+2014-07-14 17:04:56,886 DEBUG [net.schmizz.sshj.connection.channel.Window$Remote] [reader] Increasing by 2097152 up to 2097152
+2014-07-14 17:04:56,887 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#1 / chanreq for exec>> to `SOME`
+2014-07-14 17:04:56,917 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got chan request for `exit-status`
+2014-07-14 17:04:56,918 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got EOF
+2014-07-14 17:04:56,918 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got close
+2014-07-14 17:04:56,919 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Sending EOF
+2014-07-14 17:04:56,919 DEBUG [net.schmizz.sshj.common.StreamCopier] [user thread 0] 0.0 KiB transferred  in 0.032 seconds (0.0 KiB/s)
+2014-07-14 17:04:56,919 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Sending close
+2014-07-14 17:04:56,919 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Awaiting <<chan#1 / close>>
+2014-07-14 17:04:56,920 DEBUG [net.schmizz.sshj.connection.ConnectionImpl] [reader] Forgetting `session` channel (#1)
+2014-07-14 17:04:56,920 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#1 / close>> to `SOME`
+2014-07-14 17:04:56,920 DEBUG [net.schmizz.sshj.common.StreamCopier] [user thread 0] 0.0 KiB transferred  in 0.0 seconds (NaN KiB/s)
+2014-07-14 17:04:56,921 DEBUG [jclouds.ssh] [user thread 0] << (ec2-user:rsa[fingerprint(f7:e0:15:56:e3:22:71:45:55:45:24:37:0f:52:0c:fd),sha1(a3:a9:4a:c4:d4:91:ad:96:1b:53:4b:2e:bf:d2:0f:7d:3a:5d:c9:a6)]@54.91.177.227:22) acquired {output=, error=, exitStatus=0}
+2014-07-14 17:04:56,921 DEBUG [jclouds.ssh] [user thread 0] >> (ec2-user:rsa[fingerprint(f7:e0:15:56:e3:22:71:45:55:45:24:37:0f:52:0c:fd),sha1(a3:a9:4a:c4:d4:91:ad:96:1b:53:4b:2e:bf:d2:0f:7d:3a:5d:c9:a6)]@54.91.177.227:22) acquiring ExecResponse(command=[ln -fs /tmp/init-bootstrap bootstrap])
+2014-07-14 17:04:56,921 DEBUG [jclouds.ssh] [user thread 0] >> (ec2-user:rsa[fingerprint(f7:e0:15:56:e3:22:71:45:55:45:24:37:0f:52:0c:fd),sha1(a3:a9:4a:c4:d4:91:ad:96:1b:53:4b:2e:bf:d2:0f:7d:3a:5d:c9:a6)]@54.91.177.227:22) acquiring Session()
+2014-07-14 17:04:56,922 DEBUG [net.schmizz.sshj.connection.ConnectionImpl] [user thread 0] Attaching `session` channel (#2)
+2014-07-14 17:04:56,922 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Awaiting <<chan#2 / open>>
+2014-07-14 17:04:58,804 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Initialized - < session channel: id=2, recipient=2, localWin=[winSize=2097152], remoteWin=[winSize=0] >
+2014-07-14 17:04:58,805 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#2 / open>> to `SOME`
+2014-07-14 17:04:58,805 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 0] Sending channel request for `pty-req`
+2014-07-14 17:04:58,805 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Awaiting <<chan#2 / chanreq for pty-req>>
+2014-07-14 17:04:59,149 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#2 / chanreq for pty-req>> to `SOME`
+2014-07-14 17:04:59,150 DEBUG [jclouds.ssh] [user thread 0] << (ec2-user:rsa[fingerprint(f7:e0:15:56:e3:22:71:45:55:45:24:37:0f:52:0c:fd),sha1(a3:a9:4a:c4:d4:91:ad:96:1b:53:4b:2e:bf:d2:0f:7d:3a:5d:c9:a6)]@54.91.177.227:22) acquired < session channel: id=2, recipient=2, localWin=[winSize=2097152], remoteWin=[winSize=0] >
+2014-07-14 17:04:59,150 INFO  [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 0] Will request to exec `ln -fs /tmp/init-bootstrap bootstrap`
+2014-07-14 17:04:59,150 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 0] Sending channel request for `exec`
+2014-07-14 17:04:59,150 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Awaiting <<chan#2 / chanreq for exec>>
+2014-07-14 17:05:00,830 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Received window adjustment for 2097152 bytes
+2014-07-14 17:05:00,830 DEBUG [net.schmizz.sshj.connection.channel.Window$Remote] [reader] Increasing by 2097152 up to 2097152
+2014-07-14 17:05:00,831 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#2 / chanreq for exec>> to `SOME`
+2014-07-14 17:05:00,832 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got chan request for `exit-status`
+2014-07-14 17:05:00,832 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got EOF
+2014-07-14 17:05:00,833 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got close
+2014-07-14 17:05:00,833 DEBUG [net.schmizz.sshj.common.StreamCopier] [user thread 0] 0.0 KiB transferred  in 0.0020 seconds (0.0 KiB/s)
+2014-07-14 17:05:00,833 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Sending EOF
+2014-07-14 17:05:00,833 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Awaiting <<chan#2 / close>>
+2014-07-14 17:05:00,833 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Sending close
+2014-07-14 17:05:00,833 DEBUG [net.schmizz.sshj.connection.ConnectionImpl] [reader] Forgetting `session` channel (#2)
+2014-07-14 17:05:00,833 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#2 / close>> to `SOME`
+2014-07-14 17:05:00,833 DEBUG [net.schmizz.sshj.common.StreamCopier] [user thread 0] 0.0 KiB transferred  in 0.0 seconds (NaN KiB/s)
+2014-07-14 17:05:00,834 DEBUG [jclouds.ssh] [user thread 0] << (ec2-user:rsa[fingerprint(f7:e0:15:56:e3:22:71:45:55:45:24:37:0f:52:0c:fd),sha1(a3:a9:4a:c4:d4:91:ad:96:1b:53:4b:2e:bf:d2:0f:7d:3a:5d:c9:a6)]@54.91.177.227:22) acquired {output=, error=, exitStatus=0}
+2014-07-14 17:05:00,834 DEBUG [jclouds.ssh] [user thread 0] >> (ec2-user:rsa[fingerprint(f7:e0:15:56:e3:22:71:45:55:45:24:37:0f:52:0c:fd),sha1(a3:a9:4a:c4:d4:91:ad:96:1b:53:4b:2e:bf:d2:0f:7d:3a:5d:c9:a6)]@54.91.177.227:22) acquiring ExecResponse(command=[/tmp/init-bootstrap init])
+2014-07-14 17:05:00,834 DEBUG [jclouds.ssh] [user thread 0] >> (ec2-user:rsa[fingerprint(f7:e0:15:56:e3:22:71:45:55:45:24:37:0f:52:0c:fd),sha1(a3:a9:4a:c4:d4:91:ad:96:1b:53:4b:2e:bf:d2:0f:7d:3a:5d:c9:a6)]@54.91.177.227:22) acquiring Session()
+2014-07-14 17:05:00,834 DEBUG [net.schmizz.sshj.connection.ConnectionImpl] [user thread 0] Attaching `session` channel (#3)
+2014-07-14 17:05:00,835 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Awaiting <<chan#3 / open>>
+2014-07-14 17:05:02,363 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Initialized - < session channel: id=3, recipient=1, localWin=[winSize=2097152], remoteWin=[winSize=0] >
+2014-07-14 17:05:02,363 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#3 / open>> to `SOME`
+2014-07-14 17:05:02,363 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 0] Sending channel request for `pty-req`
+2014-07-14 17:05:02,364 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Awaiting <<chan#3 / chanreq for pty-req>>
+2014-07-14 17:05:02,682 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#3 / chanreq for pty-req>> to `SOME`
+2014-07-14 17:05:02,682 DEBUG [jclouds.ssh] [user thread 0] << (ec2-user:rsa[fingerprint(f7:e0:15:56:e3:22:71:45:55:45:24:37:0f:52:0c:fd),sha1(a3:a9:4a:c4:d4:91:ad:96:1b:53:4b:2e:bf:d2:0f:7d:3a:5d:c9:a6)]@54.91.177.227:22) acquired < session channel: id=3, recipient=1, localWin=[winSize=2097152], remoteWin=[winSize=0] >
+2014-07-14 17:05:02,683 INFO  [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 0] Will request to exec `/tmp/init-bootstrap init`
+2014-07-14 17:05:02,683 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 0] Sending channel request for `exec`
+2014-07-14 17:05:02,683 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Awaiting <<chan#3 / chanreq for exec>>
+2014-07-14 17:05:02,847 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Received window adjustment for 2097152 bytes
+2014-07-14 17:05:02,847 DEBUG [net.schmizz.sshj.connection.channel.Window$Remote] [reader] Increasing by 2097152 up to 2097152
+2014-07-14 17:05:02,848 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#3 / chanreq for exec>> to `SOME`
+2014-07-14 17:05:02,896 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got chan request for `exit-status`
+2014-07-14 17:05:02,896 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got EOF
+2014-07-14 17:05:02,897 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got close
+2014-07-14 17:05:02,897 DEBUG [net.schmizz.sshj.common.StreamCopier] [user thread 0] 0.0 KiB transferred  in 0.049 seconds (0.0 KiB/s)
+2014-07-14 17:05:02,897 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Sending EOF
+2014-07-14 17:05:02,897 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Awaiting <<chan#3 / close>>
+2014-07-14 17:05:02,897 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Sending close
+2014-07-14 17:05:02,897 DEBUG [net.schmizz.sshj.connection.ConnectionImpl] [reader] Forgetting `session` channel (#3)
+2014-07-14 17:05:02,897 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#3 / close>> to `SOME`
+2014-07-14 17:05:02,898 DEBUG [net.schmizz.sshj.common.StreamCopier] [user thread 0] 0.0 KiB transferred  in 0.0 seconds (NaN KiB/s)
+2014-07-14 17:05:02,898 DEBUG [jclouds.ssh] [user thread 0] << (ec2-user:rsa[fingerprint(f7:e0:15:56:e3:22:71:45:55:45:24:37:0f:52:0c:fd),sha1(a3:a9:4a:c4:d4:91:ad:96:1b:53:4b:2e:bf:d2:0f:7d:3a:5d:c9:a6)]@54.91.177.227:22) acquired {output=, error=, exitStatus=0}
+2014-07-14 17:05:02,899 DEBUG [jclouds.ssh] [user thread 0] >> (ec2-user:rsa[fingerprint(f7:e0:15:56:e3:22:71:45:55:45:24:37:0f:52:0c:fd),sha1(a3:a9:4a:c4:d4:91:ad:96:1b:53:4b:2e:bf:d2:0f:7d:3a:5d:c9:a6)]@54.91.177.227:22) acquiring ExecResponse(command=[sudo /tmp/init-bootstrap start])
+2014-07-14 17:05:02,899 DEBUG [jclouds.ssh] [user thread 0] >> (ec2-user:rsa[fingerprint(f7:e0:15:56:e3:22:71:45:55:45:24:37:0f:52:0c:fd),sha1(a3:a9:4a:c4:d4:91:ad:96:1b:53:4b:2e:bf:d2:0f:7d:3a:5d:c9:a6)]@54.91.177.227:22) acquiring Session()
+2014-07-14 17:05:02,900 DEBUG [net.schmizz.sshj.connection.ConnectionImpl] [user thread 0] Attaching `session` channel (#4)
+2014-07-14 17:05:02,900 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Awaiting <<chan#4 / open>>
+2014-07-14 17:05:04,137 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Initialized - < session channel: id=4, recipient=2, localWin=[winSize=2097152], remoteWin=[winSize=0] >
+2014-07-14 17:05:04,137 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#4 / open>> to `SOME`
+2014-07-14 17:05:04,137 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 0] Sending channel request for `pty-req`
+2014-07-14 17:05:04,138 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Awaiting <<chan#4 / chanreq for pty-req>>
+2014-07-14 17:05:05,320 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#4 / chanreq for pty-req>> to `SOME`
+2014-07-14 17:05:05,320 DEBUG [jclouds.ssh] [user thread 0] << (ec2-user:rsa[fingerprint(f7:e0:15:56:e3:22:71:45:55:45:24:37:0f:52:0c:fd),sha1(a3:a9:4a:c4:d4:91:ad:96:1b:53:4b:2e:bf:d2:0f:7d:3a:5d:c9:a6)]@54.91.177.227:22) acquired < session channel: id=4, recipient=2, localWin=[winSize=2097152], remoteWin=[winSize=0] >
+2014-07-14 17:05:05,320 INFO  [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 0] Will request to exec `sudo /tmp/init-bootstrap start`
+2014-07-14 17:05:05,320 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 0] Sending channel request for `exec`
+2014-07-14 17:05:05,321 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Awaiting <<chan#4 / chanreq for exec>>
+2014-07-14 17:05:06,334 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Received window adjustment for 2097152 bytes
+2014-07-14 17:05:06,334 DEBUG [net.schmizz.sshj.connection.channel.Window$Remote] [reader] Increasing by 2097152 up to 2097152
+2014-07-14 17:05:06,334 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#4 / chanreq for exec>> to `SOME`
+2014-07-14 17:05:08,522 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got EOF
+2014-07-14 17:05:08,523 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got chan request for `exit-status`
+2014-07-14 17:05:08,523 DEBUG [net.schmizz.sshj.common.StreamCopier] [user thread 0] 0.0 KiB transferred  in 2.188 seconds (0.0 KiB/s)
+2014-07-14 17:05:08,523 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Awaiting <<chan#4 / close>>
+2014-07-14 17:05:08,523 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got close
+2014-07-14 17:05:08,523 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Sending EOF
+2014-07-14 17:05:08,523 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Sending close
+2014-07-14 17:05:08,524 DEBUG [net.schmizz.sshj.connection.ConnectionImpl] [reader] Forgetting `session` channel (#4)
+2014-07-14 17:05:08,524 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#4 / close>> to `SOME`
+2014-07-14 17:05:08,524 DEBUG [net.schmizz.sshj.common.StreamCopier] [user thread 0] 0.0 KiB transferred  in 0.0 seconds (NaN KiB/s)
+2014-07-14 17:05:08,524 DEBUG [jclouds.ssh] [user thread 0] << (ec2-user:rsa[fingerprint(f7:e0:15:56:e3:22:71:45:55:45:24:37:0f:52:0c:fd),sha1(a3:a9:4a:c4:d4:91:ad:96:1b:53:4b:2e:bf:d2:0f:7d:3a:5d:c9:a6)]@54.91.177.227:22) acquired {output=, error=, exitStatus=0}
+2014-07-14 17:05:08,526 DEBUG [jclouds.ssh] [user thread 2] >> (ec2-user:rsa[fingerprint(f7:e0:15:56:e3:22:71:45:55:45:24:37:0f:52:0c:fd),sha1(a3:a9:4a:c4:d4:91:ad:96:1b:53:4b:2e:bf:d2:0f:7d:3a:5d:c9:a6)]@54.91.177.227:22) acquiring ExecResponse(command=[/tmp/init-bootstrap status])
+2014-07-14 17:05:08,527 DEBUG [jclouds.ssh] [user thread 2] >> (ec2-user:rsa[fingerprint(f7:e0:15:56:e3:22:71:45:55:45:24:37:0f:52:0c:fd),sha1(a3:a9:4a:c4:d4:91:ad:96:1b:53:4b:2e:bf:d2:0f:7d:3a:5d:c9:a6)]@54.91.177.227:22) acquiring Session()
+2014-07-14 17:05:08,527 DEBUG [net.schmizz.sshj.connection.ConnectionImpl] [user thread 2] Attaching `session` channel (#5)
+2014-07-14 17:05:08,527 DEBUG [net.schmizz.concurrent.Promise] [user thread 2] Awaiting <<chan#5 / open>>
+2014-07-14 17:05:09,849 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Initialized - < session channel: id=5, recipient=1, localWin=[winSize=2097152], remoteWin=[winSize=0] >
+2014-07-14 17:05:09,849 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#5 / open>> to `SOME`
+2014-07-14 17:05:09,849 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 2] Sending channel request for `pty-req`
+2014-07-14 17:05:09,850 DEBUG [net.schmizz.concurrent.Promise] [user thread 2] Awaiting <<chan#5 / chanreq for pty-req>>
+2014-07-14 17:05:10,140 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#5 / chanreq for pty-req>> to `SOME`
+2014-07-14 17:05:10,141 DEBUG [jclouds.ssh] [user thread 2] << (ec2-user:rsa[fingerprint(f7:e0:15:56:e3:22:71:45:55:45:24:37:0f:52:0c:fd),sha1(a3:a9:4a:c4:d4:91:ad:96:1b:53:4b:2e:bf:d2:0f:7d:3a:5d:c9:a6)]@54.91.177.227:22) acquired < session channel: id=5, recipient=1, localWin=[winSize=2097152], remoteWin=[winSize=0] >
+2014-07-14 17:05:10,141 INFO  [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 2] Will request to exec `/tmp/init-bootstrap status`
+2014-07-14 17:05:10,141 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 2] Sending channel request for `exec`
+2014-07-14 17:05:10,141 DEBUG [net.schmizz.concurrent.Promise] [user thread 2] Awaiting <<chan#5 / chanreq for exec>>
+2014-07-14 17:05:10,825 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Received window adjustment for 2097152 bytes
+2014-07-14 17:05:10,825 DEBUG [net.schmizz.sshj.connection.channel.Window$Remote] [reader] Increasing by 2097152 up to 2097152
+2014-07-14 17:05:10,826 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#5 / chanreq for exec>> to `SOME`
+2014-07-14 17:05:10,845 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got chan request for `exit-status`
+2014-07-14 17:05:10,845 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got EOF
+2014-07-14 17:05:10,846 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got close
+2014-07-14 17:05:10,846 DEBUG [net.schmizz.sshj.common.StreamCopier] [user thread 2] 0.0 KiB transferred  in 0.019 seconds (0.0 KiB/s)
+2014-07-14 17:05:10,846 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Sending EOF
+2014-07-14 17:05:10,846 DEBUG [net.schmizz.concurrent.Promise] [user thread 2] Awaiting <<chan#5 / close>>
+2014-07-14 17:05:10,846 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Sending close
+2014-07-14 17:05:10,846 DEBUG [net.schmizz.sshj.connection.ConnectionImpl] [reader] Forgetting `session` channel (#5)
+2014-07-14 17:05:10,846 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#5 / close>> to `SOME`
+2014-07-14 17:05:10,847 DEBUG [net.schmizz.sshj.common.StreamCopier] [user thread 2] 0.0 KiB transferred  in 0.0 seconds (NaN KiB/s)
+2014-07-14 17:05:10,847 DEBUG [jclouds.ssh] [user thread 2] << (ec2-user:rsa[fingerprint(f7:e0:15:56:e3:22:71:45:55:45:24:37:0f:52:0c:fd),sha1(a3:a9:4a:c4:d4:91:ad:96:1b:53:4b:2e:bf:d2:0f:7d:3a:5d:c9:a6)]@54.91.177.227:22) acquired {output=, error=, exitStatus=1}
+2014-07-14 17:05:10,847 DEBUG [jclouds.ssh] [user thread 2] >> (ec2-user:rsa[fingerprint(f7:e0:15:56:e3:22:71:45:55:45:24:37:0f:52:0c:fd),sha1(a3:a9:4a:c4:d4:91:ad:96:1b:53:4b:2e:bf:d2:0f:7d:3a:5d:c9:a6)]@54.91.177.227:22) acquiring ExecResponse(command=[/tmp/init-bootstrap stdout])
+2014-07-14 17:05:10,847 DEBUG [jclouds.ssh] [user thread 2] >> (ec2-user:rsa[fingerprint(f7:e0:15:56:e3:22:71:45:55:45:24:37:0f:52:0c:fd),sha1(a3:a9:4a:c4:d4:91:ad:96:1b:53:4b:2e:bf:d2:0f:7d:3a:5d:c9:a6)]@54.91.177.227:22) acquiring Session()
+2014-07-14 17:05:10,848 DEBUG [net.schmizz.sshj.connection.ConnectionImpl] [user thread 2] Attaching `session` channel (#6)
+2014-07-14 17:05:10,848 DEBUG [net.schmizz.concurrent.Promise] [user thread 2] Awaiting <<chan#6 / open>>
+2014-07-14 17:05:16,204 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Initialized - < session channel: id=6, recipient=2, localWin=[winSize=2097152], remoteWin=[winSize=0] >
+2014-07-14 17:05:16,204 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#6 / open>> to `SOME`
+2014-07-14 17:05:16,204 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 2] Sending channel request for `pty-req`
+2014-07-14 17:05:16,205 DEBUG [net.schmizz.concurrent.Promise] [user thread 2] Awaiting <<chan#6 / chanreq for pty-req>>
+2014-07-14 17:05:16,955 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#6 / chanreq for pty-req>> to `SOME`
+2014-07-14 17:05:16,955 DEBUG [jclouds.ssh] [user thread 2] << (ec2-user:rsa[fingerprint(f7:e0:15:56:e3:22:71:45:55:45:24:37:0f:52:0c:fd),sha1(a3:a9:4a:c4:d4:91:ad:96:1b:53:4b:2e:bf:d2:0f:7d:3a:5d:c9:a6)]@54.91.177.227:22) acquired < session channel: id=6, recipient=2, localWin=[winSize=2097152], remoteWin=[winSize=0] >
+2014-07-14 17:05:16,955 INFO  [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 2] Will request to exec `/tmp/init-bootstrap stdout`
+2014-07-14 17:05:16,955 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 2] Sending channel request for `exec`
+2014-07-14 17:05:16,956 DEBUG [net.schmizz.concurrent.Promise] [user thread 2] Awaiting <<chan#6 / chanreq for exec>>
+2014-07-14 17:05:19,259 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Received window adjustment for 2097152 bytes
+2014-07-14 17:05:19,259 DEBUG [net.schmizz.sshj.connection.channel.Window$Remote] [reader] Increasing by 2097152 up to 2097152
+2014-07-14 17:05:19,259 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#6 / chanreq for exec>> to `SOME`
+2014-07-14 17:05:19,260 DEBUG [net.schmizz.sshj.connection.channel.Window$Local] [reader] Consuming by 27 down to 2097125
+2014-07-14 17:05:19,260 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got chan request for `exit-status`
+2014-07-14 17:05:19,260 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got EOF
+2014-07-14 17:05:19,260 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got close
+2014-07-14 17:05:19,260 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Sending EOF
+2014-07-14 17:05:19,260 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Sending close
+2014-07-14 17:05:19,260 DEBUG [net.schmizz.sshj.connection.ConnectionImpl] [reader] Forgetting `session` channel (#6)
+2014-07-14 17:05:19,260 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#6 / close>> to `SOME`
+2014-07-14 17:05:19,263 DEBUG [net.schmizz.sshj.common.StreamCopier] [user thread 2] 0.0263671875 KiB transferred  in 0.0010 seconds (26.3671875 KiB/s)
+2014-07-14 17:05:19,263 DEBUG [net.schmizz.sshj.common.StreamCopier] [user thread 2] 0.0 KiB transferred  in 0.0 seconds (NaN KiB/s)
+2014-07-14 17:05:19,263 DEBUG [jclouds.ssh] [user thread 2] << (ec2-user:rsa[fingerprint(f7:e0:15:56:e3:22:71:45:55:45:24:37:0f:52:0c:fd),sha1(a3:a9:4a:c4:d4:91:ad:96:1b:53:4b:2e:bf:d2:0f:7d:3a:5d:c9:a6)]@54.91.177.227:22) acquired {output=Reloading sshd: [  OK  ]
+, error=, exitStatus=0}
+2014-07-14 17:05:19,263 DEBUG [jclouds.ssh] [user thread 2] >> (ec2-user:rsa[fingerprint(f7:e0:15:56:e3:22:71:45:55:45:24:37:0f:52:0c:fd),sha1(a3:a9:4a:c4:d4:91:ad:96:1b:53:4b:2e:bf:d2:0f:7d:3a:5d:c9:a6)]@54.91.177.227:22) acquiring ExecResponse(command=[/tmp/init-bootstrap stderr])
+2014-07-14 17:05:19,263 DEBUG [jclouds.ssh] [user thread 2] >> (ec2-user:rsa[fingerprint(f7:e0:15:56:e3:22:71:45:55:45:24:37:0f:52:0c:fd),sha1(a3:a9:4a:c4:d4:91:ad:96:1b:53:4b:2e:bf:d2:0f:7d:3a:5d:c9:a6)]@54.91.177.227:22) acquiring Session()
+2014-07-14 17:05:19,263 DEBUG [net.schmizz.sshj.connection.ConnectionImpl] [user thread 2] Attaching `session` channel (#7)
+2014-07-14 17:05:19,263 DEBUG [net.schmizz.concurrent.Promise] [user thread 2] Awaiting <<chan#7 / open>>
+2014-07-14 17:05:21,565 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Initialized - < session channel: id=7, recipient=1, localWin=[winSize=2097152], remoteWin=[winSize=0] >
+2014-07-14 17:05:21,565 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#7 / open>> to `SOME`
+2014-07-14 17:05:21,566 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 2] Sending channel request for `pty-req`
+2014-07-14 17:05:21,566 DEBUG [net.schmizz.concurrent.Promise] [user thread 2] Awaiting <<chan#7 / chanreq for pty-req>>
+2014-07-14 17:05:23,593 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#7 / chanreq for pty-req>> to `SOME`
+2014-07-14 17:05:23,593 DEBUG [jclouds.ssh] [user thread 2] << (ec2-user:rsa[fingerprint(f7:e0:15:56:e3:22:71:45:55:45:24:37:0f:52:0c:fd),sha1(a3:a9:4a:c4:d4:91:ad:96:1b:53:4b:2e:bf:d2:0f:7d:3a:5d:c9:a6)]@54.91.177.227:22) acquired < session channel: id=7, recipient=1, localWin=[winSize=2097152], remoteWin=[winSize=0] >
+2014-07-14 17:05:23,593 INFO  [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 2] Will request to exec `/tmp/init-bootstrap stderr`
+2014-07-14 17:05:23,593 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 2] Sending channel request for `exec`
+2014-07-14 17:05:23,593 DEBUG [net.schmizz.concurrent.Promise] [user thread 2] Awaiting <<chan#7 / chanreq for exec>>
+2014-07-14 17:05:24,365 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Received window adjustment for 2097152 bytes
+2014-07-14 17:05:24,365 DEBUG [net.schmizz.sshj.connection.channel.Window$Remote] [reader] Increasing by 2097152 up to 2097152
+2014-07-14 17:05:24,366 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#7 / chanreq for exec>> to `SOME`
+2014-07-14 17:05:24,366 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got chan request for `exit-status`
+2014-07-14 17:05:24,366 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got EOF
+2014-07-14 17:05:24,367 DEBUG [net.schmizz.sshj.common.StreamCopier] [user thread 2] 0.0 KiB transferred  in 0.0 seconds (NaN KiB/s)
+2014-07-14 17:05:24,367 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got close
+2014-07-14 17:05:24,367 DEBUG [net.schmizz.concurrent.Promise] [user thread 2] Awaiting <<chan#7 / close>>
+2014-07-14 17:05:24,367 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Sending EOF
+2014-07-14 17:05:24,367 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Sending close
+2014-07-14 17:05:24,367 DEBUG [net.schmizz.sshj.connection.ConnectionImpl] [reader] Forgetting `session` channel (#7)
+2014-07-14 17:05:24,367 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#7 / close>> to `SOME`
+2014-07-14 17:05:24,367 DEBUG [net.schmizz.sshj.common.StreamCopier] [user thread 2] 0.0 KiB transferred  in 0.0 seconds (NaN KiB/s)
+2014-07-14 17:05:24,368 DEBUG [jclouds.ssh] [user thread 2] << (ec2-user:rsa[fingerprint(f7:e0:15:56:e3:22:71:45:55:45:24:37:0f:52:0c:fd),sha1(a3:a9:4a:c4:d4:91:ad:96:1b:53:4b:2e:bf:d2:0f:7d:3a:5d:c9:a6)]@54.91.177.227:22) acquired {output=, error=, exitStatus=0}
+2014-07-14 17:05:24,368 DEBUG [jclouds.ssh] [user thread 2] >> (ec2-user:rsa[fingerprint(f7:e0:15:56:e3:22:71:45:55:45:24:37:0f:52:0c:fd),sha1(a3:a9:4a:c4:d4:91:ad:96:1b:53:4b:2e:bf:d2:0f:7d:3a:5d:c9:a6)]@54.91.177.227:22) acquiring ExecResponse(command=[/tmp/init-bootstrap exitstatus])
+2014-07-14 17:05:24,368 DEBUG [jclouds.ssh] [user thread 2] >> (ec2-user:rsa[fingerprint(f7:e0:15:56:e3:22:71:45:55:45:24:37:0f:52:0c:fd),sha1(a3:a9:4a:c4:d4:91:ad:96:1b:53:4b:2e:bf:d2:0f:7d:3a:5d:c9:a6)]@54.91.177.227:22) acquiring Session()
+2014-07-14 17:05:24,368 DEBUG [net.schmizz.sshj.connection.ConnectionImpl] [user thread 2] Attaching `session` channel (#8)
+2014-07-14 17:05:24,368 DEBUG [net.schmizz.concurrent.Promise] [user thread 2] Awaiting <<chan#8 / open>>
+2014-07-14 17:05:27,861 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Initialized - < session channel: id=8, recipient=2, localWin=[winSize=2097152], remoteWin=[winSize=0] >
+2014-07-14 17:05:27,862 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#8 / open>> to `SOME`
+2014-07-14 17:05:27,862 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 2] Sending channel request for `pty-req`
+2014-07-14 17:05:27,862 DEBUG [net.schmizz.concurrent.Promise] [user thread 2] Awaiting <<chan#8 / chanreq for pty-req>>
+2014-07-14 17:05:28,062 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#8 / chanreq for pty-req>> to `SOME`
+2014-07-14 17:05:28,062 DEBUG [jclouds.ssh] [user thread 2] << (ec2-user:rsa[fingerprint(f7:e0:15:56:e3:22:71:45:55:45:24:37:0f:52:0c:fd),sha1(a3:a9:4a:c4:d4:91:ad:96:1b:53:4b:2e:bf:d2:0f:7d:3a:5d:c9:a6)]@54.91.177.227:22) acquired < session channel: id=8, recipient=2, localWin=[winSize=2097152], remoteWin=[winSize=0] >
+2014-07-14 17:05:28,062 INFO  [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 2] Will request to exec `/tmp/init-bootstrap exitstatus`
+2014-07-14 17:05:28,062 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 2] Sending channel request for `exec`
+2014-07-14 17:05:28,063 DEBUG [net.schmizz.concurrent.Promise] [user thread 2] Awaiting <<chan#8 / chanreq for exec>>
+2014-07-14 17:05:28,244 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Received window adjustment for 2097152 bytes
+2014-07-14 17:05:28,245 DEBUG [net.schmizz.sshj.connection.channel.Window$Remote] [reader] Increasing by 2097152 up to 2097152
+2014-07-14 17:05:28,245 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#8 / chanreq for exec>> to `SOME`
+2014-07-14 17:05:28,301 DEBUG [net.schmizz.sshj.connection.channel.Window$Local] [reader] Consuming by 3 down to 2097149
+2014-07-14 17:05:28,301 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got EOF
+2014-07-14 17:05:28,301 DEBUG [net.schmizz.sshj.common.StreamCopier] [user thread 2] 0.0029296875 KiB transferred  in 0.056 seconds (0.05231584821428571 KiB/s)
+2014-07-14 17:05:28,301 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got chan request for `exit-status`
+2014-07-14 17:05:28,301 DEBUG [net.schmizz.concurrent.Promise] [user thread 2] Awaiting <<chan#8 / close>>
+2014-07-14 17:05:28,301 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got close
+2014-07-14 17:05:28,302 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Sending EOF
+2014-07-14 17:05:28,302 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Sending close
+2014-07-14 17:05:28,302 DEBUG [net.schmizz.sshj.connection.ConnectionImpl] [reader] Forgetting `session` channel (#8)
+2014-07-14 17:05:28,302 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#8 / close>> to `SOME`
+2014-07-14 17:05:28,302 DEBUG [net.schmizz.sshj.common.StreamCopier] [user thread 2] 0.0 KiB transferred  in 0.0 seconds (NaN KiB/s)
+2014-07-14 17:05:28,303 DEBUG [jclouds.ssh] [user thread 2] << (ec2-user:rsa[fingerprint(f7:e0:15:56:e3:22:71:45:55:45:24:37:0f:52:0c:fd),sha1(a3:a9:4a:c4:d4:91:ad:96:1b:53:4b:2e:bf:d2:0f:7d:3a:5d:c9:a6)]@54.91.177.227:22) acquired {output=0
+, error=, exitStatus=0}
+2014-07-14 17:05:28,307 INFO  [net.schmizz.sshj.transport.TransportImpl] [user thread 0] Disconnected - BY_APPLICATION
+2014-07-14 17:05:28,308 DEBUG [net.schmizz.sshj.connection.ConnectionImpl] [user thread 0] Notified of net.schmizz.sshj.transport.TransportException: [BY_APPLICATION] Disconnected
+2014-07-14 17:05:28,309 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 0] Channel #0 got notified of net.schmizz.sshj.transport.TransportException: [BY_APPLICATION] Disconnected
+2014-07-14 17:05:28,309 DEBUG [net.schmizz.sshj.connection.ConnectionImpl] [user thread 0] Forgetting `session` channel (#0)
+2014-07-14 17:05:28,310 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Setting <<chan#0 / close>> to `SOME`
+2014-07-14 17:05:28,310 DEBUG [net.schmizz.sshj.transport.TransportImpl] [user thread 0] Sending SSH_MSG_DISCONNECT: reason=[BY_APPLICATION], msg=[]
+2014-07-14 17:05:28,310 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Setting <<transport close>> to `SOME`
+2014-07-14 17:05:28,310 DEBUG [net.schmizz.sshj.transport.Reader] [reader] Stopping
+2014-07-16 10:42:30,267 DEBUG [jclouds.ssh] [user thread 0] >> (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.90.41.12:22) acquiring {hostAndPort=54.90.41.12:22, loginUser=ec2-user, ssh=null, connectTimeout=60000, sessionTimeout=60000}
+2014-07-16 10:42:30,358 DEBUG [net.schmizz.sshj.common.SecurityUtils] [user thread 0] Trying to register BouncyCastle as a JCE provider
+2014-07-16 10:42:30,701 DEBUG [jclouds.ssh] [user thread 1] >> (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.81.195.8:22) acquiring {hostAndPort=54.81.195.8:22, loginUser=ec2-user, ssh=null, connectTimeout=60000, sessionTimeout=60000}
+2014-07-16 10:42:30,781 INFO  [net.schmizz.sshj.common.SecurityUtils] [user thread 0] BouncyCastle registration succeeded
+2014-07-16 10:42:31,035 INFO  [net.schmizz.sshj.transport.TransportImpl] [user thread 1] Client identity string: SSH-2.0-SSHJ_0_8_1_SNAPSHOT
+2014-07-16 10:42:31,035 INFO  [net.schmizz.sshj.transport.TransportImpl] [user thread 0] Client identity string: SSH-2.0-SSHJ_0_8_1_SNAPSHOT
+2014-07-16 10:42:31,219 INFO  [net.schmizz.sshj.transport.TransportImpl] [user thread 1] Server identity string: SSH-2.0-OpenSSH_6.2
+2014-07-16 10:42:31,219 DEBUG [net.schmizz.concurrent.Promise] [user thread 1] Setting <<kex done>> to `null`
+2014-07-16 10:42:31,220 DEBUG [net.schmizz.sshj.transport.KeyExchanger] [user thread 1] Sending SSH_MSG_KEXINIT
+2014-07-16 10:42:31,224 DEBUG [net.schmizz.concurrent.Promise] [user thread 1] Setting <<kexinit sent>> to `SOME`
+2014-07-16 10:42:31,225 DEBUG [net.schmizz.concurrent.Promise] [user thread 1] Awaiting <<kex done>>
+2014-07-16 10:42:31,230 INFO  [net.schmizz.sshj.transport.TransportImpl] [user thread 0] Server identity string: SSH-2.0-OpenSSH_6.2
+2014-07-16 10:42:31,231 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Setting <<kex done>> to `null`
+2014-07-16 10:42:31,231 DEBUG [net.schmizz.sshj.transport.KeyExchanger] [user thread 0] Sending SSH_MSG_KEXINIT
+2014-07-16 10:42:31,231 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Setting <<kexinit sent>> to `SOME`
+2014-07-16 10:42:31,231 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Awaiting <<kex done>>
+2014-07-16 10:42:31,379 DEBUG [net.schmizz.sshj.transport.KeyExchanger] [reader] Received SSH_MSG_KEXINIT
+2014-07-16 10:42:31,379 DEBUG [net.schmizz.sshj.transport.KeyExchanger] [reader] Received SSH_MSG_KEXINIT
+2014-07-16 10:42:31,380 DEBUG [net.schmizz.sshj.transport.KeyExchanger] [reader] Negotiated algorithms: [ kex=diffie-hellman-group14-sha1; sig=ssh-rsa; c2sCipher=aes128-ctr; s2cCipher=aes128-ctr; c2sMAC=hmac-sha1; s2cMAC=hmac-sha1; c2sComp=none; s2cComp=none ]
+2014-07-16 10:42:31,380 DEBUG [net.schmizz.sshj.transport.KeyExchanger] [reader] Negotiated algorithms: [ kex=diffie-hellman-group14-sha1; sig=ssh-rsa; c2sCipher=aes128-ctr; s2cCipher=aes128-ctr; c2sMAC=hmac-sha1; s2cMAC=hmac-sha1; c2sComp=none; s2cComp=none ]
+2014-07-16 10:42:31,418 DEBUG [net.schmizz.sshj.transport.kex.DHG14] [reader] Sending SSH_MSG_KEXDH_INIT
+2014-07-16 10:42:31,418 DEBUG [net.schmizz.sshj.transport.kex.DHG14] [reader] Sending SSH_MSG_KEXDH_INIT
+2014-07-16 10:42:31,570 DEBUG [net.schmizz.sshj.transport.KeyExchanger] [reader] Received kex followup data
+2014-07-16 10:42:31,570 DEBUG [net.schmizz.sshj.transport.kex.DHG14] [reader] Received SSH_MSG_KEXDH_REPLY
+2014-07-16 10:42:31,585 DEBUG [net.schmizz.sshj.transport.KeyExchanger] [reader] Received kex followup data
+2014-07-16 10:42:31,585 DEBUG [net.schmizz.sshj.transport.kex.DHG14] [reader] Received SSH_MSG_KEXDH_REPLY
+2014-07-16 10:42:31,632 DEBUG [net.schmizz.sshj.transport.KeyExchanger] [reader] Trying to verify host key with net.schmizz.sshj.transport.verification.PromiscuousVerifier@69fd6f07
+2014-07-16 10:42:31,632 DEBUG [net.schmizz.sshj.transport.KeyExchanger] [reader] Trying to verify host key with net.schmizz.sshj.transport.verification.PromiscuousVerifier@648353f6
+2014-07-16 10:42:31,632 DEBUG [net.schmizz.sshj.transport.KeyExchanger] [reader] Sending SSH_MSG_NEWKEYS
+2014-07-16 10:42:31,632 DEBUG [net.schmizz.sshj.transport.KeyExchanger] [reader] Sending SSH_MSG_NEWKEYS
+2014-07-16 10:42:31,633 DEBUG [net.schmizz.sshj.transport.KeyExchanger] [reader] Received SSH_MSG_NEWKEYS
+2014-07-16 10:42:31,633 DEBUG [net.schmizz.sshj.transport.KeyExchanger] [reader] Received SSH_MSG_NEWKEYS
+2014-07-16 10:42:31,637 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<kexinit sent>> to `null`
+2014-07-16 10:42:31,637 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<kexinit sent>> to `null`
+2014-07-16 10:42:31,637 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<kex done>> to `SOME`
+2014-07-16 10:42:31,637 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<kex done>> to `SOME`
+2014-07-16 10:42:31,637 DEBUG [net.schmizz.sshj.SSHClient] [user thread 1] Key exchange took 0.418 seconds
+2014-07-16 10:42:31,637 DEBUG [net.schmizz.sshj.SSHClient] [user thread 0] Key exchange took 0.406 seconds
+2014-07-16 10:42:31,660 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Setting <<service accept>> to `null`
+2014-07-16 10:42:31,660 DEBUG [net.schmizz.sshj.transport.TransportImpl] [user thread 0] Sending SSH_MSG_SERVICE_REQUEST for ssh-userauth
+2014-07-16 10:42:31,660 DEBUG [net.schmizz.concurrent.Promise] [user thread 1] Setting <<service accept>> to `null`
+2014-07-16 10:42:31,660 DEBUG [net.schmizz.sshj.transport.TransportImpl] [user thread 1] Sending SSH_MSG_SERVICE_REQUEST for ssh-userauth
+2014-07-16 10:42:31,661 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Awaiting <<service accept>>
+2014-07-16 10:42:31,661 DEBUG [net.schmizz.concurrent.Promise] [user thread 1] Awaiting <<service accept>>
+2014-07-16 10:42:32,003 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<service accept>> to `SOME`
+2014-07-16 10:42:32,003 DEBUG [net.schmizz.sshj.transport.TransportImpl] [user thread 0] Setting active service to ssh-userauth
+2014-07-16 10:42:32,004 DEBUG [net.schmizz.sshj.userauth.UserAuthImpl] [user thread 0] Trying `publickey` auth...
+2014-07-16 10:42:32,004 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Setting <<authenticated>> to `null`
+2014-07-16 10:42:32,004 DEBUG [net.schmizz.sshj.userauth.method.AuthPublickey] [user thread 0] Attempting authentication using PKCS8KeyFile{resource=[PrivateKeyStringResource]}
+2014-07-16 10:42:32,006 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<service accept>> to `SOME`
+2014-07-16 10:42:32,006 DEBUG [net.schmizz.sshj.transport.TransportImpl] [user thread 1] Setting active service to ssh-userauth
+2014-07-16 10:42:32,006 DEBUG [net.schmizz.sshj.userauth.UserAuthImpl] [user thread 1] Trying `publickey` auth...
+2014-07-16 10:42:32,006 DEBUG [net.schmizz.concurrent.Promise] [user thread 1] Setting <<authenticated>> to `null`
+2014-07-16 10:42:32,006 DEBUG [net.schmizz.sshj.userauth.method.AuthPublickey] [user thread 1] Attempting authentication using PKCS8KeyFile{resource=[PrivateKeyStringResource]}
+2014-07-16 10:42:32,032 DEBUG [net.schmizz.concurrent.Promise] [user thread 1] Awaiting <<authenticated>>
+2014-07-16 10:42:32,032 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Awaiting <<authenticated>>
+2014-07-16 10:42:32,571 DEBUG [net.schmizz.sshj.userauth.UserAuthImpl] [reader] Asking `publickey` method to handle USERAUTH_60 packet
+2014-07-16 10:42:32,571 DEBUG [net.schmizz.sshj.userauth.UserAuthImpl] [reader] Asking `publickey` method to handle USERAUTH_60 packet
+2014-07-16 10:42:32,571 DEBUG [net.schmizz.sshj.userauth.method.AuthPublickey] [reader] Key acceptable, sending signed request
+2014-07-16 10:42:32,571 DEBUG [net.schmizz.sshj.userauth.method.AuthPublickey] [reader] Key acceptable, sending signed request
+2014-07-16 10:42:32,571 DEBUG [net.schmizz.sshj.userauth.method.AuthPublickey] [reader] Attempting authentication using PKCS8KeyFile{resource=[PrivateKeyStringResource]}
+2014-07-16 10:42:32,571 DEBUG [net.schmizz.sshj.userauth.method.AuthPublickey] [reader] Attempting authentication using PKCS8KeyFile{resource=[PrivateKeyStringResource]}
+2014-07-16 10:42:32,765 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<authenticated>> to `SOME`
+2014-07-16 10:42:32,765 DEBUG [net.schmizz.sshj.userauth.UserAuthImpl] [user thread 0] `publickey` auth successful
+2014-07-16 10:42:32,765 DEBUG [net.schmizz.sshj.transport.TransportImpl] [user thread 0] Setting active service to ssh-connection
+2014-07-16 10:42:32,765 DEBUG [jclouds.ssh] [user thread 0] << (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.90.41.12:22) acquired net.schmizz.sshj.SSHClient@7d16ecf
+2014-07-16 10:42:32,776 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<authenticated>> to `SOME`
+2014-07-16 10:42:32,776 DEBUG [net.schmizz.sshj.userauth.UserAuthImpl] [user thread 1] `publickey` auth successful
+2014-07-16 10:42:32,777 DEBUG [net.schmizz.sshj.transport.TransportImpl] [user thread 1] Setting active service to ssh-connection
+2014-07-16 10:42:32,777 DEBUG [jclouds.ssh] [user thread 1] << (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.81.195.8:22) acquired net.schmizz.sshj.SSHClient@38a92aaa
+2014-07-16 10:42:32,876 DEBUG [jclouds.ssh] [user thread 0] >> (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.90.41.12:22) acquiring Put(path=[/tmp/init-bootstrap])
+2014-07-16 10:42:32,876 DEBUG [jclouds.ssh] [user thread 0] >> (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.90.41.12:22) acquiring SFTPClient()
+2014-07-16 10:42:32,876 DEBUG [jclouds.ssh] [user thread 1] >> (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.81.195.8:22) acquiring Put(path=[/tmp/init-bootstrap])
+2014-07-16 10:42:32,877 DEBUG [jclouds.ssh] [user thread 1] >> (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.81.195.8:22) acquiring SFTPClient()
+2014-07-16 10:42:32,894 DEBUG [net.schmizz.sshj.connection.ConnectionImpl] [user thread 0] Attaching `session` channel (#0)
+2014-07-16 10:42:32,894 DEBUG [net.schmizz.sshj.connection.ConnectionImpl] [user thread 1] Attaching `session` channel (#0)
+2014-07-16 10:42:32,894 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Awaiting <<chan#0 / open>>
+2014-07-16 10:42:32,894 DEBUG [net.schmizz.concurrent.Promise] [user thread 1] Awaiting <<chan#0 / open>>
+2014-07-16 10:42:33,085 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Initialized - < session channel: id=0, recipient=0, localWin=[winSize=2097152], remoteWin=[winSize=0] >
+2014-07-16 10:42:33,085 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Initialized - < session channel: id=0, recipient=0, localWin=[winSize=2097152], remoteWin=[winSize=0] >
+2014-07-16 10:42:33,085 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#0 / open>> to `SOME`
+2014-07-16 10:42:33,085 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#0 / open>> to `SOME`
+2014-07-16 10:42:33,085 INFO  [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 1] Will request `sftp` subsystem
+2014-07-16 10:42:33,085 INFO  [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 0] Will request `sftp` subsystem
+2014-07-16 10:42:33,086 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 1] Sending channel request for `subsystem`
+2014-07-16 10:42:33,086 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 0] Sending channel request for `subsystem`
+2014-07-16 10:42:33,086 DEBUG [net.schmizz.concurrent.Promise] [user thread 1] Awaiting <<chan#0 / chanreq for subsystem>>
+2014-07-16 10:42:33,086 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Awaiting <<chan#0 / chanreq for subsystem>>
+2014-07-16 10:42:33,236 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Received window adjustment for 2097152 bytes
+2014-07-16 10:42:33,236 DEBUG [net.schmizz.sshj.connection.channel.Window$Remote] [reader] Increasing by 2097152 up to 2097152
+2014-07-16 10:42:33,236 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#0 / chanreq for subsystem>> to `SOME`
+2014-07-16 10:42:33,240 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Received window adjustment for 2097152 bytes
+2014-07-16 10:42:33,240 DEBUG [net.schmizz.sshj.connection.channel.Window$Remote] [reader] Increasing by 2097152 up to 2097152
+2014-07-16 10:42:33,240 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#0 / chanreq for subsystem>> to `SOME`
+2014-07-16 10:42:33,241 DEBUG [net.schmizz.sshj.connection.channel.Window$Remote] [user thread 0] Consuming by 9 down to 2097143
+2014-07-16 10:42:33,241 DEBUG [net.schmizz.sshj.connection.channel.Window$Remote] [user thread 1] Consuming by 9 down to 2097143
+2014-07-16 10:42:33,444 DEBUG [net.schmizz.sshj.connection.channel.Window$Local] [reader] Consuming by 128 down to 2097024
+2014-07-16 10:42:33,444 DEBUG [net.schmizz.sshj.sftp.SFTPEngine] [user thread 0] Server version 3
+2014-07-16 10:42:33,450 DEBUG [jclouds.ssh] [user thread 0] << (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.90.41.12:22) acquired net.schmizz.sshj.sftp.SFTPClient@63d12a6
+2014-07-16 10:42:33,453 DEBUG [net.schmizz.sshj.xfer.LoggingTransferListener] [user thread 0] started transferring file `/tmp/init-bootstrap` (4834 bytes)
+2014-07-16 10:42:33,453 DEBUG [net.schmizz.sshj.sftp.SFTPEngine] [user thread 0] Sending Request{1;STAT}
+2014-07-16 10:42:33,453 DEBUG [net.schmizz.sshj.connection.channel.Window$Remote] [user thread 0] Consuming by 32 down to 2097111
+2014-07-16 10:42:33,453 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Awaiting <<sftp / 1>>
+2014-07-16 10:42:33,600 DEBUG [net.schmizz.sshj.connection.channel.Window$Local] [reader] Consuming by 33 down to 2096991
+2014-07-16 10:42:33,601 DEBUG [net.schmizz.sshj.sftp.PacketReader] [sftp reader] Received STATUS packet
+2014-07-16 10:42:33,601 DEBUG [net.schmizz.concurrent.Promise] [sftp reader] Setting <<sftp / 1>> to `Buffer [rpos=5, wpos=29, size=29]`
+2014-07-16 10:42:33,603 DEBUG [net.schmizz.sshj.sftp.SFTPFileTransfer] [user thread 0] probeFile: /tmp/init-bootstrap does not exist
+2014-07-16 10:42:33,610 DEBUG [net.schmizz.sshj.sftp.SFTPEngine] [user thread 0] Sending Request{2;OPEN}
+2014-07-16 10:42:33,610 DEBUG [net.schmizz.sshj.connection.channel.Window$Remote] [user thread 0] Consuming by 40 down to 2097071
+2014-07-16 10:42:33,610 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Awaiting <<sftp / 2>>
+2014-07-16 10:42:33,758 DEBUG [net.schmizz.sshj.connection.channel.Window$Local] [reader] Consuming by 17 down to 2096974
+2014-07-16 10:42:33,758 DEBUG [net.schmizz.sshj.sftp.PacketReader] [sftp reader] Received HANDLE packet
+2014-07-16 10:42:33,758 DEBUG [net.schmizz.concurrent.Promise] [sftp reader] Setting <<sftp / 2>> to `Buffer [rpos=5, wpos=13, size=13]`
+2014-07-16 10:42:33,761 DEBUG [net.schmizz.sshj.sftp.SFTPEngine] [user thread 0] Sending Request{3;WRITE}
+2014-07-16 10:42:33,764 DEBUG [net.schmizz.sshj.connection.channel.Window$Remote] [user thread 0] Consuming by 4863 down to 2092208
+2014-07-16 10:42:33,764 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Awaiting <<sftp / 3>>
+2014-07-16 10:42:33,970 DEBUG [net.schmizz.sshj.connection.channel.Window$Local] [reader] Consuming by 28 down to 2096946
+2014-07-16 10:42:33,970 DEBUG [net.schmizz.sshj.sftp.PacketReader] [sftp reader] Received STATUS packet
+2014-07-16 10:42:33,971 DEBUG [net.schmizz.concurrent.Promise] [sftp reader] Setting <<sftp / 3>> to `Buffer [rpos=5, wpos=24, size=24]`
+2014-07-16 10:42:33,971 DEBUG [net.schmizz.sshj.common.StreamCopier] [user thread 0] 4.720703125 KiB transferred  in 0.21 seconds (22.47953869047619 KiB/s)
+2014-07-16 10:42:33,971 DEBUG [net.schmizz.sshj.sftp.RemoteFile] [user thread 0] Closing `RemoteResource{/tmp/init-bootstrap}`
+2014-07-16 10:42:33,971 DEBUG [net.schmizz.sshj.sftp.SFTPEngine] [user thread 0] Sending Request{4;CLOSE}
+2014-07-16 10:42:33,972 DEBUG [net.schmizz.sshj.connection.channel.Window$Remote] [user thread 0] Consuming by 17 down to 2092191
+2014-07-16 10:42:33,972 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Awaiting <<sftp / 4>>
+2014-07-16 10:42:34,120 DEBUG [net.schmizz.sshj.connection.channel.Window$Local] [reader] Consuming by 28 down to 2096918
+2014-07-16 10:42:34,121 DEBUG [net.schmizz.sshj.sftp.PacketReader] [sftp reader] Received STATUS packet
+2014-07-16 10:42:34,121 DEBUG [net.schmizz.concurrent.Promise] [sftp reader] Setting <<sftp / 4>> to `Buffer [rpos=5, wpos=24, size=24]`
+2014-07-16 10:42:34,122 DEBUG [net.schmizz.sshj.sftp.SFTPEngine] [user thread 0] Sending Request{5;SETSTAT}
+2014-07-16 10:42:34,122 DEBUG [net.schmizz.sshj.connection.channel.Window$Remote] [user thread 0] Consuming by 40 down to 2092151
+2014-07-16 10:42:34,122 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Awaiting <<sftp / 5>>
+2014-07-16 10:42:34,268 DEBUG [net.schmizz.sshj.connection.channel.Window$Local] [reader] Consuming by 28 down to 2096890
+2014-07-16 10:42:34,268 DEBUG [net.schmizz.sshj.sftp.PacketReader] [sftp reader] Received STATUS packet
+2014-07-16 10:42:34,269 DEBUG [net.schmizz.concurrent.Promise] [sftp reader] Setting <<sftp / 5>> to `Buffer [rpos=5, wpos=24, size=24]`
+2014-07-16 10:42:34,269 DEBUG [jclouds.ssh] [user thread 0] << (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.90.41.12:22) acquired null
+2014-07-16 10:42:34,273 DEBUG [jclouds.ssh] [user thread 0] >> (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.90.41.12:22) acquiring ExecResponse(command=[chmod 755 /tmp/init-bootstrap])
+2014-07-16 10:42:34,274 DEBUG [jclouds.ssh] [user thread 0] >> (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.90.41.12:22) acquiring Session()
+2014-07-16 10:42:34,274 DEBUG [net.schmizz.sshj.connection.ConnectionImpl] [user thread 0] Attaching `session` channel (#1)
+2014-07-16 10:42:34,274 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Awaiting <<chan#1 / open>>
+2014-07-16 10:42:34,284 DEBUG [net.schmizz.sshj.connection.channel.Window$Local] [reader] Consuming by 128 down to 2097024
+2014-07-16 10:42:34,284 DEBUG [net.schmizz.sshj.sftp.SFTPEngine] [user thread 1] Server version 3
+2014-07-16 10:42:34,284 DEBUG [jclouds.ssh] [user thread 1] << (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.81.195.8:22) acquired net.schmizz.sshj.sftp.SFTPClient@4f7820c3
+2014-07-16 10:42:34,285 DEBUG [net.schmizz.sshj.xfer.LoggingTransferListener] [user thread 1] started transferring file `/tmp/init-bootstrap` (4834 bytes)
+2014-07-16 10:42:34,285 DEBUG [net.schmizz.sshj.sftp.SFTPEngine] [user thread 1] Sending Request{1;STAT}
+2014-07-16 10:42:34,285 DEBUG [net.schmizz.sshj.connection.channel.Window$Remote] [user thread 1] Consuming by 32 down to 2097111
+2014-07-16 10:42:34,285 DEBUG [net.schmizz.concurrent.Promise] [user thread 1] Awaiting <<sftp / 1>>
+2014-07-16 10:42:34,421 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Initialized - < session channel: id=1, recipient=1, localWin=[winSize=2097152], remoteWin=[winSize=0] >
+2014-07-16 10:42:34,422 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#1 / open>> to `SOME`
+2014-07-16 10:42:34,423 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 0] Sending channel request for `pty-req`
+2014-07-16 10:42:34,424 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Awaiting <<chan#1 / chanreq for pty-req>>
+2014-07-16 10:42:34,436 DEBUG [net.schmizz.sshj.connection.channel.Window$Local] [reader] Consuming by 33 down to 2096991
+2014-07-16 10:42:34,438 DEBUG [net.schmizz.sshj.sftp.PacketReader] [sftp reader] Received STATUS packet
+2014-07-16 10:42:34,438 DEBUG [net.schmizz.concurrent.Promise] [sftp reader] Setting <<sftp / 1>> to `Buffer [rpos=5, wpos=29, size=29]`
+2014-07-16 10:42:34,438 DEBUG [net.schmizz.sshj.sftp.SFTPFileTransfer] [user thread 1] probeFile: /tmp/init-bootstrap does not exist
+2014-07-16 10:42:34,438 DEBUG [net.schmizz.sshj.sftp.SFTPEngine] [user thread 1] Sending Request{2;OPEN}
+2014-07-16 10:42:34,439 DEBUG [net.schmizz.sshj.connection.channel.Window$Remote] [user thread 1] Consuming by 40 down to 2097071
+2014-07-16 10:42:34,439 DEBUG [net.schmizz.concurrent.Promise] [user thread 1] Awaiting <<sftp / 2>>
+2014-07-16 10:42:34,571 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#1 / chanreq for pty-req>> to `SOME`
+2014-07-16 10:42:34,572 DEBUG [jclouds.ssh] [user thread 0] << (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.90.41.12:22) acquired < session channel: id=1, recipient=1, localWin=[winSize=2097152], remoteWin=[winSize=0] >
+2014-07-16 10:42:34,572 INFO  [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 0] Will request to exec `chmod 755 /tmp/init-bootstrap`
+2014-07-16 10:42:34,572 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 0] Sending channel request for `exec`
+2014-07-16 10:42:34,572 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Awaiting <<chan#1 / chanreq for exec>>
+2014-07-16 10:42:34,591 DEBUG [net.schmizz.sshj.connection.channel.Window$Local] [reader] Consuming by 17 down to 2096974
+2014-07-16 10:42:34,591 DEBUG [net.schmizz.sshj.sftp.PacketReader] [sftp reader] Received HANDLE packet
+2014-07-16 10:42:34,591 DEBUG [net.schmizz.concurrent.Promise] [sftp reader] Setting <<sftp / 2>> to `Buffer [rpos=5, wpos=13, size=13]`
+2014-07-16 10:42:34,592 DEBUG [net.schmizz.sshj.sftp.SFTPEngine] [user thread 1] Sending Request{3;WRITE}
+2014-07-16 10:42:34,597 DEBUG [net.schmizz.sshj.connection.channel.Window$Remote] [user thread 1] Consuming by 4863 down to 2092208
+2014-07-16 10:42:34,597 DEBUG [net.schmizz.concurrent.Promise] [user thread 1] Awaiting <<sftp / 3>>
+2014-07-16 10:42:34,719 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Received window adjustment for 2097152 bytes
+2014-07-16 10:42:34,720 DEBUG [net.schmizz.sshj.connection.channel.Window$Remote] [reader] Increasing by 2097152 up to 2097152
+2014-07-16 10:42:34,720 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#1 / chanreq for exec>> to `SOME`
+2014-07-16 10:42:34,758 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got chan request for `exit-status`
+2014-07-16 10:42:34,759 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got EOF
+2014-07-16 10:42:34,759 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got close
+2014-07-16 10:42:34,759 DEBUG [net.schmizz.sshj.common.StreamCopier] [user thread 0] 0.0 KiB transferred  in 0.039 seconds (0.0 KiB/s)
+2014-07-16 10:42:34,759 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Sending EOF
+2014-07-16 10:42:34,759 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Awaiting <<chan#1 / close>>
+2014-07-16 10:42:34,760 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Sending close
+2014-07-16 10:42:34,760 DEBUG [net.schmizz.sshj.connection.ConnectionImpl] [reader] Forgetting `session` channel (#1)
+2014-07-16 10:42:34,760 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#1 / close>> to `SOME`
+2014-07-16 10:42:34,760 DEBUG [net.schmizz.sshj.common.StreamCopier] [user thread 0] 0.0 KiB transferred  in 0.0 seconds (NaN KiB/s)
+2014-07-16 10:42:34,761 DEBUG [jclouds.ssh] [user thread 0] << (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.90.41.12:22) acquired {output=, error=, exitStatus=0}
+2014-07-16 10:42:34,761 DEBUG [jclouds.ssh] [user thread 0] >> (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.90.41.12:22) acquiring ExecResponse(command=[ln -fs /tmp/init-bootstrap bootstrap])
+2014-07-16 10:42:34,761 DEBUG [jclouds.ssh] [user thread 0] >> (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.90.41.12:22) acquiring Session()
+2014-07-16 10:42:34,761 DEBUG [net.schmizz.sshj.connection.ConnectionImpl] [user thread 0] Attaching `session` channel (#2)
+2014-07-16 10:42:34,762 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Awaiting <<chan#2 / open>>
+2014-07-16 10:42:34,808 DEBUG [net.schmizz.sshj.connection.channel.Window$Local] [reader] Consuming by 28 down to 2096946
+2014-07-16 10:42:34,808 DEBUG [net.schmizz.sshj.sftp.PacketReader] [sftp reader] Received STATUS packet
+2014-07-16 10:42:34,808 DEBUG [net.schmizz.concurrent.Promise] [sftp reader] Setting <<sftp / 3>> to `Buffer [rpos=5, wpos=24, size=24]`
+2014-07-16 10:42:34,808 DEBUG [net.schmizz.sshj.common.StreamCopier] [user thread 1] 4.720703125 KiB transferred  in 0.217 seconds (21.75439228110599 KiB/s)
+2014-07-16 10:42:34,808 DEBUG [net.schmizz.sshj.sftp.RemoteFile] [user thread 1] Closing `RemoteResource{/tmp/init-bootstrap}`
+2014-07-16 10:42:34,808 DEBUG [net.schmizz.sshj.sftp.SFTPEngine] [user thread 1] Sending Request{4;CLOSE}
+2014-07-16 10:42:34,808 DEBUG [net.schmizz.sshj.connection.channel.Window$Remote] [user thread 1] Consuming by 17 down to 2092191
+2014-07-16 10:42:34,808 DEBUG [net.schmizz.concurrent.Promise] [user thread 1] Awaiting <<sftp / 4>>
+2014-07-16 10:42:34,965 DEBUG [net.schmizz.sshj.connection.channel.Window$Local] [reader] Consuming by 28 down to 2096918
+2014-07-16 10:42:34,965 DEBUG [net.schmizz.sshj.sftp.PacketReader] [sftp reader] Received STATUS packet
+2014-07-16 10:42:34,965 DEBUG [net.schmizz.concurrent.Promise] [sftp reader] Setting <<sftp / 4>> to `Buffer [rpos=5, wpos=24, size=24]`
+2014-07-16 10:42:34,966 DEBUG [net.schmizz.sshj.sftp.SFTPEngine] [user thread 1] Sending Request{5;SETSTAT}
+2014-07-16 10:42:34,966 DEBUG [net.schmizz.sshj.connection.channel.Window$Remote] [user thread 1] Consuming by 40 down to 2092151
+2014-07-16 10:42:34,966 DEBUG [net.schmizz.concurrent.Promise] [user thread 1] Awaiting <<sftp / 5>>
+2014-07-16 10:42:35,102 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Initialized - < session channel: id=2, recipient=2, localWin=[winSize=2097152], remoteWin=[winSize=0] >
+2014-07-16 10:42:35,102 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#2 / open>> to `SOME`
+2014-07-16 10:42:35,103 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 0] Sending channel request for `pty-req`
+2014-07-16 10:42:35,103 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Awaiting <<chan#2 / chanreq for pty-req>>
+2014-07-16 10:42:35,119 DEBUG [net.schmizz.sshj.connection.channel.Window$Local] [reader] Consuming by 28 down to 2096890
+2014-07-16 10:42:35,119 DEBUG [net.schmizz.sshj.sftp.PacketReader] [sftp reader] Received STATUS packet
+2014-07-16 10:42:35,119 DEBUG [net.schmizz.concurrent.Promise] [sftp reader] Setting <<sftp / 5>> to `Buffer [rpos=5, wpos=24, size=24]`
+2014-07-16 10:42:35,119 DEBUG [jclouds.ssh] [user thread 1] << (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.81.195.8:22) acquired null
+2014-07-16 10:42:35,120 DEBUG [jclouds.ssh] [user thread 1] >> (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.81.195.8:22) acquiring ExecResponse(command=[chmod 755 /tmp/init-bootstrap])
+2014-07-16 10:42:35,120 DEBUG [jclouds.ssh] [user thread 1] >> (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.81.195.8:22) acquiring Session()
+2014-07-16 10:42:35,120 DEBUG [net.schmizz.sshj.connection.ConnectionImpl] [user thread 1] Attaching `session` channel (#1)
+2014-07-16 10:42:35,121 DEBUG [net.schmizz.concurrent.Promise] [user thread 1] Awaiting <<chan#1 / open>>
+2014-07-16 10:42:35,252 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#2 / chanreq for pty-req>> to `SOME`
+2014-07-16 10:42:35,252 DEBUG [jclouds.ssh] [user thread 0] << (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.90.41.12:22) acquired < session channel: id=2, recipient=2, localWin=[winSize=2097152], remoteWin=[winSize=0] >
+2014-07-16 10:42:35,252 INFO  [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 0] Will request to exec `ln -fs /tmp/init-bootstrap bootstrap`
+2014-07-16 10:42:35,252 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 0] Sending channel request for `exec`
+2014-07-16 10:42:35,252 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Awaiting <<chan#2 / chanreq for exec>>
+2014-07-16 10:42:35,272 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Initialized - < session channel: id=1, recipient=1, localWin=[winSize=2097152], remoteWin=[winSize=0] >
+2014-07-16 10:42:35,273 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#1 / open>> to `SOME`
+2014-07-16 10:42:35,273 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 1] Sending channel request for `pty-req`
+2014-07-16 10:42:35,273 DEBUG [net.schmizz.concurrent.Promise] [user thread 1] Awaiting <<chan#1 / chanreq for pty-req>>
+2014-07-16 10:42:35,400 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Received window adjustment for 2097152 bytes
+2014-07-16 10:42:35,400 DEBUG [net.schmizz.sshj.connection.channel.Window$Remote] [reader] Increasing by 2097152 up to 2097152
+2014-07-16 10:42:35,400 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#2 / chanreq for exec>> to `SOME`
+2014-07-16 10:42:35,426 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#1 / chanreq for pty-req>> to `SOME`
+2014-07-16 10:42:35,426 DEBUG [jclouds.ssh] [user thread 1] << (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.81.195.8:22) acquired < session channel: id=1, recipient=1, localWin=[winSize=2097152], remoteWin=[winSize=0] >
+2014-07-16 10:42:35,426 INFO  [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 1] Will request to exec `chmod 755 /tmp/init-bootstrap`
+2014-07-16 10:42:35,426 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 1] Sending channel request for `exec`
+2014-07-16 10:42:35,427 DEBUG [net.schmizz.concurrent.Promise] [user thread 1] Awaiting <<chan#1 / chanreq for exec>>
+2014-07-16 10:42:35,435 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got chan request for `exit-status`
+2014-07-16 10:42:35,435 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got EOF
+2014-07-16 10:42:35,436 DEBUG [net.schmizz.sshj.common.StreamCopier] [user thread 0] 0.0 KiB transferred  in 0.035 seconds (0.0 KiB/s)
+2014-07-16 10:42:35,436 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got close
+2014-07-16 10:42:35,436 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Awaiting <<chan#2 / close>>
+2014-07-16 10:42:35,436 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Sending EOF
+2014-07-16 10:42:35,436 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Sending close
+2014-07-16 10:42:35,436 DEBUG [net.schmizz.sshj.connection.ConnectionImpl] [reader] Forgetting `session` channel (#2)
+2014-07-16 10:42:35,436 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#2 / close>> to `SOME`
+2014-07-16 10:42:35,436 DEBUG [net.schmizz.sshj.common.StreamCopier] [user thread 0] 0.0 KiB transferred  in 0.0 seconds (NaN KiB/s)
+2014-07-16 10:42:35,437 DEBUG [jclouds.ssh] [user thread 0] << (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.90.41.12:22) acquired {output=, error=, exitStatus=0}
+2014-07-16 10:42:35,437 DEBUG [jclouds.ssh] [user thread 0] >> (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.90.41.12:22) acquiring ExecResponse(command=[/tmp/init-bootstrap init])
+2014-07-16 10:42:35,437 DEBUG [jclouds.ssh] [user thread 0] >> (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.90.41.12:22) acquiring Session()
+2014-07-16 10:42:35,437 DEBUG [net.schmizz.sshj.connection.ConnectionImpl] [user thread 0] Attaching `session` channel (#3)
+2014-07-16 10:42:35,438 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Awaiting <<chan#3 / open>>
+2014-07-16 10:42:35,580 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Received window adjustment for 2097152 bytes
+2014-07-16 10:42:35,580 DEBUG [net.schmizz.sshj.connection.channel.Window$Remote] [reader] Increasing by 2097152 up to 2097152
+2014-07-16 10:42:35,581 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#1 / chanreq for exec>> to `SOME`
+2014-07-16 10:42:35,618 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got chan request for `exit-status`
+2014-07-16 10:42:35,618 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got EOF
+2014-07-16 10:42:35,619 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got close
+2014-07-16 10:42:35,619 DEBUG [net.schmizz.sshj.common.StreamCopier] [user thread 1] 0.0 KiB transferred  in 0.038 seconds (0.0 KiB/s)
+2014-07-16 10:42:35,619 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Sending EOF
+2014-07-16 10:42:35,619 DEBUG [net.schmizz.concurrent.Promise] [user thread 1] Awaiting <<chan#1 / close>>
+2014-07-16 10:42:35,619 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Sending close
+2014-07-16 10:42:35,619 DEBUG [net.schmizz.sshj.connection.ConnectionImpl] [reader] Forgetting `session` channel (#1)
+2014-07-16 10:42:35,619 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#1 / close>> to `SOME`
+2014-07-16 10:42:35,619 DEBUG [net.schmizz.sshj.common.StreamCopier] [user thread 1] 0.0 KiB transferred  in 0.0 seconds (NaN KiB/s)
+2014-07-16 10:42:35,620 DEBUG [jclouds.ssh] [user thread 1] << (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.81.195.8:22) acquired {output=, error=, exitStatus=0}
+2014-07-16 10:42:35,620 DEBUG [jclouds.ssh] [user thread 1] >> (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.81.195.8:22) acquiring ExecResponse(command=[ln -fs /tmp/init-bootstrap bootstrap])
+2014-07-16 10:42:35,620 DEBUG [jclouds.ssh] [user thread 1] >> (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.81.195.8:22) acquiring Session()
+2014-07-16 10:42:35,620 DEBUG [net.schmizz.sshj.connection.ConnectionImpl] [user thread 1] Attaching `session` channel (#2)
+2014-07-16 10:42:35,621 DEBUG [net.schmizz.concurrent.Promise] [user thread 1] Awaiting <<chan#2 / open>>
+2014-07-16 10:42:35,768 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Initialized - < session channel: id=3, recipient=1, localWin=[winSize=2097152], remoteWin=[winSize=0] >
+2014-07-16 10:42:35,768 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#3 / open>> to `SOME`
+2014-07-16 10:42:35,768 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 0] Sending channel request for `pty-req`
+2014-07-16 10:42:35,768 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Awaiting <<chan#3 / chanreq for pty-req>>
+2014-07-16 10:42:35,915 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#3 / chanreq for pty-req>> to `SOME`
+2014-07-16 10:42:35,915 DEBUG [jclouds.ssh] [user thread 0] << (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.90.41.12:22) acquired < session channel: id=3, recipient=1, localWin=[winSize=2097152], remoteWin=[winSize=0] >
+2014-07-16 10:42:35,915 INFO  [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 0] Will request to exec `/tmp/init-bootstrap init`
+2014-07-16 10:42:35,915 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 0] Sending channel request for `exec`
+2014-07-16 10:42:35,915 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Awaiting <<chan#3 / chanreq for exec>>
+2014-07-16 10:42:35,958 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Initialized - < session channel: id=2, recipient=2, localWin=[winSize=2097152], remoteWin=[winSize=0] >
+2014-07-16 10:42:35,958 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#2 / open>> to `SOME`
+2014-07-16 10:42:35,959 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 1] Sending channel request for `pty-req`
+2014-07-16 10:42:35,959 DEBUG [net.schmizz.concurrent.Promise] [user thread 1] Awaiting <<chan#2 / chanreq for pty-req>>
+2014-07-16 10:42:36,063 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Received window adjustment for 2097152 bytes
+2014-07-16 10:42:36,063 DEBUG [net.schmizz.sshj.connection.channel.Window$Remote] [reader] Increasing by 2097152 up to 2097152
+2014-07-16 10:42:36,064 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#3 / chanreq for exec>> to `SOME`
+2014-07-16 10:42:36,111 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#2 / chanreq for pty-req>> to `SOME`
+2014-07-16 10:42:36,111 DEBUG [jclouds.ssh] [user thread 1] << (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.81.195.8:22) acquired < session channel: id=2, recipient=2, localWin=[winSize=2097152], remoteWin=[winSize=0] >
+2014-07-16 10:42:36,111 INFO  [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 1] Will request to exec `ln -fs /tmp/init-bootstrap bootstrap`
+2014-07-16 10:42:36,111 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 1] Sending channel request for `exec`
+2014-07-16 10:42:36,112 DEBUG [net.schmizz.concurrent.Promise] [user thread 1] Awaiting <<chan#2 / chanreq for exec>>
+2014-07-16 10:42:36,126 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got chan request for `exit-status`
+2014-07-16 10:42:36,126 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got EOF
+2014-07-16 10:42:36,127 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got close
+2014-07-16 10:42:36,127 DEBUG [net.schmizz.sshj.common.StreamCopier] [user thread 0] 0.0 KiB transferred  in 0.062 seconds (0.0 KiB/s)
+2014-07-16 10:42:36,127 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Sending EOF
+2014-07-16 10:42:36,127 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Awaiting <<chan#3 / close>>
+2014-07-16 10:42:36,127 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Sending close
+2014-07-16 10:42:36,127 DEBUG [net.schmizz.sshj.connection.ConnectionImpl] [reader] Forgetting `session` channel (#3)
+2014-07-16 10:42:36,127 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#3 / close>> to `SOME`
+2014-07-16 10:42:36,127 DEBUG [net.schmizz.sshj.common.StreamCopier] [user thread 0] 0.0 KiB transferred  in 0.0 seconds (NaN KiB/s)
+2014-07-16 10:42:36,127 DEBUG [jclouds.ssh] [user thread 0] << (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.90.41.12:22) acquired {output=, error=, exitStatus=0}
+2014-07-16 10:42:36,128 DEBUG [jclouds.ssh] [user thread 0] >> (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.90.41.12:22) acquiring ExecResponse(command=[sudo /tmp/init-bootstrap start])
+2014-07-16 10:42:36,128 DEBUG [jclouds.ssh] [user thread 0] >> (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.90.41.12:22) acquiring Session()
+2014-07-16 10:42:36,128 DEBUG [net.schmizz.sshj.connection.ConnectionImpl] [user thread 0] Attaching `session` channel (#4)
+2014-07-16 10:42:36,129 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Awaiting <<chan#4 / open>>
+2014-07-16 10:42:36,264 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Received window adjustment for 2097152 bytes
+2014-07-16 10:42:36,265 DEBUG [net.schmizz.sshj.connection.channel.Window$Remote] [reader] Increasing by 2097152 up to 2097152
+2014-07-16 10:42:36,265 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#2 / chanreq for exec>> to `SOME`
+2014-07-16 10:42:36,303 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got chan request for `exit-status`
+2014-07-16 10:42:36,303 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got EOF
+2014-07-16 10:42:36,304 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got close
+2014-07-16 10:42:36,304 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Sending EOF
+2014-07-16 10:42:36,304 DEBUG [net.schmizz.sshj.common.StreamCopier] [user thread 1] 0.0 KiB transferred  in 0.039 seconds (0.0 KiB/s)
+2014-07-16 10:42:36,304 DEBUG [net.schmizz.concurrent.Promise] [user thread 1] Awaiting <<chan#2 / close>>
+2014-07-16 10:42:36,304 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Sending close
+2014-07-16 10:42:36,304 DEBUG [net.schmizz.sshj.connection.ConnectionImpl] [reader] Forgetting `session` channel (#2)
+2014-07-16 10:42:36,304 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#2 / close>> to `SOME`
+2014-07-16 10:42:36,304 DEBUG [net.schmizz.sshj.common.StreamCopier] [user thread 1] 0.0 KiB transferred  in 0.0 seconds (NaN KiB/s)
+2014-07-16 10:42:36,304 DEBUG [jclouds.ssh] [user thread 1] << (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.81.195.8:22) acquired {output=, error=, exitStatus=0}
+2014-07-16 10:42:36,304 DEBUG [jclouds.ssh] [user thread 1] >> (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.81.195.8:22) acquiring ExecResponse(command=[/tmp/init-bootstrap init])
+2014-07-16 10:42:36,305 DEBUG [jclouds.ssh] [user thread 1] >> (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.81.195.8:22) acquiring Session()
+2014-07-16 10:42:36,305 DEBUG [net.schmizz.sshj.connection.ConnectionImpl] [user thread 1] Attaching `session` channel (#3)
+2014-07-16 10:42:36,305 DEBUG [net.schmizz.concurrent.Promise] [user thread 1] Awaiting <<chan#3 / open>>
+2014-07-16 10:42:36,457 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Initialized - < session channel: id=4, recipient=2, localWin=[winSize=2097152], remoteWin=[winSize=0] >
+2014-07-16 10:42:36,457 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#4 / open>> to `SOME`
+2014-07-16 10:42:36,458 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 0] Sending channel request for `pty-req`
+2014-07-16 10:42:36,458 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Awaiting <<chan#4 / chanreq for pty-req>>
+2014-07-16 10:42:36,610 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#4 / chanreq for pty-req>> to `SOME`
+2014-07-16 10:42:36,610 DEBUG [jclouds.ssh] [user thread 0] << (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.90.41.12:22) acquired < session channel: id=4, recipient=2, localWin=[winSize=2097152], remoteWin=[winSize=0] >
+2014-07-16 10:42:36,610 INFO  [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 0] Will request to exec `sudo /tmp/init-bootstrap start`
+2014-07-16 10:42:36,610 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 0] Sending channel request for `exec`
+2014-07-16 10:42:36,611 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Awaiting <<chan#4 / chanreq for exec>>
+2014-07-16 10:42:36,644 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Initialized - < session channel: id=3, recipient=1, localWin=[winSize=2097152], remoteWin=[winSize=0] >
+2014-07-16 10:42:36,644 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#3 / open>> to `SOME`
+2014-07-16 10:42:36,644 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 1] Sending channel request for `pty-req`
+2014-07-16 10:42:36,645 DEBUG [net.schmizz.concurrent.Promise] [user thread 1] Awaiting <<chan#3 / chanreq for pty-req>>
+2014-07-16 10:42:36,759 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Received window adjustment for 2097152 bytes
+2014-07-16 10:42:36,760 DEBUG [net.schmizz.sshj.connection.channel.Window$Remote] [reader] Increasing by 2097152 up to 2097152
+2014-07-16 10:42:36,760 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#4 / chanreq for exec>> to `SOME`
+2014-07-16 10:42:36,797 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#3 / chanreq for pty-req>> to `SOME`
+2014-07-16 10:42:36,798 DEBUG [jclouds.ssh] [user thread 1] << (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.81.195.8:22) acquired < session channel: id=3, recipient=1, localWin=[winSize=2097152], remoteWin=[winSize=0] >
+2014-07-16 10:42:36,798 INFO  [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 1] Will request to exec `/tmp/init-bootstrap init`
+2014-07-16 10:42:36,798 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 1] Sending channel request for `exec`
+2014-07-16 10:42:36,798 DEBUG [net.schmizz.concurrent.Promise] [user thread 1] Awaiting <<chan#3 / chanreq for exec>>
+2014-07-16 10:42:36,951 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Received window adjustment for 2097152 bytes
+2014-07-16 10:42:36,952 DEBUG [net.schmizz.sshj.connection.channel.Window$Remote] [reader] Increasing by 2097152 up to 2097152
+2014-07-16 10:42:36,952 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#3 / chanreq for exec>> to `SOME`
+2014-07-16 10:42:37,019 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got chan request for `exit-status`
+2014-07-16 10:42:37,019 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got EOF
+2014-07-16 10:42:37,019 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got close
+2014-07-16 10:42:37,019 DEBUG [net.schmizz.sshj.common.StreamCopier] [user thread 1] 0.0 KiB transferred  in 0.067 seconds (0.0 KiB/s)
+2014-07-16 10:42:37,019 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Sending EOF
+2014-07-16 10:42:37,020 DEBUG [net.schmizz.concurrent.Promise] [user thread 1] Awaiting <<chan#3 / close>>
+2014-07-16 10:42:37,020 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Sending close
+2014-07-16 10:42:37,020 DEBUG [net.schmizz.sshj.connection.ConnectionImpl] [reader] Forgetting `session` channel (#3)
+2014-07-16 10:42:37,020 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#3 / close>> to `SOME`
+2014-07-16 10:42:37,020 DEBUG [net.schmizz.sshj.common.StreamCopier] [user thread 1] 0.0 KiB transferred  in 0.0 seconds (NaN KiB/s)
+2014-07-16 10:42:37,021 DEBUG [jclouds.ssh] [user thread 1] << (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.81.195.8:22) acquired {output=, error=, exitStatus=0}
+2014-07-16 10:42:37,021 DEBUG [jclouds.ssh] [user thread 1] >> (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.81.195.8:22) acquiring ExecResponse(command=[sudo /tmp/init-bootstrap start])
+2014-07-16 10:42:37,021 DEBUG [jclouds.ssh] [user thread 1] >> (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.81.195.8:22) acquiring Session()
+2014-07-16 10:42:37,022 DEBUG [net.schmizz.sshj.connection.ConnectionImpl] [user thread 1] Attaching `session` channel (#4)
+2014-07-16 10:42:37,022 DEBUG [net.schmizz.concurrent.Promise] [user thread 1] Awaiting <<chan#4 / open>>
+2014-07-16 10:42:37,360 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Initialized - < session channel: id=4, recipient=2, localWin=[winSize=2097152], remoteWin=[winSize=0] >
+2014-07-16 10:42:37,361 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#4 / open>> to `SOME`
+2014-07-16 10:42:37,361 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 1] Sending channel request for `pty-req`
+2014-07-16 10:42:37,361 DEBUG [net.schmizz.concurrent.Promise] [user thread 1] Awaiting <<chan#4 / chanreq for pty-req>>
+2014-07-16 10:42:37,515 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#4 / chanreq for pty-req>> to `SOME`
+2014-07-16 10:42:37,515 DEBUG [jclouds.ssh] [user thread 1] << (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.81.195.8:22) acquired < session channel: id=4, recipient=2, localWin=[winSize=2097152], remoteWin=[winSize=0] >
+2014-07-16 10:42:37,515 INFO  [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 1] Will request to exec `sudo /tmp/init-bootstrap start`
+2014-07-16 10:42:37,515 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 1] Sending channel request for `exec`
+2014-07-16 10:42:37,516 DEBUG [net.schmizz.concurrent.Promise] [user thread 1] Awaiting <<chan#4 / chanreq for exec>>
+2014-07-16 10:42:37,669 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Received window adjustment for 2097152 bytes
+2014-07-16 10:42:37,669 DEBUG [net.schmizz.sshj.connection.channel.Window$Remote] [reader] Increasing by 2097152 up to 2097152
+2014-07-16 10:42:37,669 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#4 / chanreq for exec>> to `SOME`
+2014-07-16 10:42:37,862 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got EOF
+2014-07-16 10:42:37,862 DEBUG [net.schmizz.sshj.common.StreamCopier] [user thread 0] 0.0 KiB transferred  in 1.102 seconds (0.0 KiB/s)
+2014-07-16 10:42:37,862 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Awaiting <<chan#4 / close>>
+2014-07-16 10:42:37,862 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got chan request for `exit-status`
+2014-07-16 10:42:37,863 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got close
+2014-07-16 10:42:37,863 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Sending EOF
+2014-07-16 10:42:37,863 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Sending close
+2014-07-16 10:42:37,863 DEBUG [net.schmizz.sshj.connection.ConnectionImpl] [reader] Forgetting `session` channel (#4)
+2014-07-16 10:42:37,863 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#4 / close>> to `SOME`
+2014-07-16 10:42:37,863 DEBUG [net.schmizz.sshj.common.StreamCopier] [user thread 0] 0.0 KiB transferred  in 0.0 seconds (NaN KiB/s)
+2014-07-16 10:42:37,864 DEBUG [jclouds.ssh] [user thread 0] << (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.90.41.12:22) acquired {output=, error=, exitStatus=0}
+2014-07-16 10:42:37,866 DEBUG [jclouds.ssh] [user thread 3] >> (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.90.41.12:22) acquiring ExecResponse(command=[/tmp/init-bootstrap status])
+2014-07-16 10:42:37,866 DEBUG [jclouds.ssh] [user thread 3] >> (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.90.41.12:22) acquiring Session()
+2014-07-16 10:42:37,866 DEBUG [net.schmizz.sshj.connection.ConnectionImpl] [user thread 3] Attaching `session` channel (#5)
+2014-07-16 10:42:37,867 DEBUG [net.schmizz.concurrent.Promise] [user thread 3] Awaiting <<chan#5 / open>>
+2014-07-16 10:42:38,196 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Initialized - < session channel: id=5, recipient=1, localWin=[winSize=2097152], remoteWin=[winSize=0] >
+2014-07-16 10:42:38,196 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#5 / open>> to `SOME`
+2014-07-16 10:42:38,196 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 3] Sending channel request for `pty-req`
+2014-07-16 10:42:38,196 DEBUG [net.schmizz.concurrent.Promise] [user thread 3] Awaiting <<chan#5 / chanreq for pty-req>>
+2014-07-16 10:42:38,343 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#5 / chanreq for pty-req>> to `SOME`
+2014-07-16 10:42:38,344 DEBUG [jclouds.ssh] [user thread 3] << (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.90.41.12:22) acquired < session channel: id=5, recipient=1, localWin=[winSize=2097152], remoteWin=[winSize=0] >
+2014-07-16 10:42:38,344 INFO  [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 3] Will request to exec `/tmp/init-bootstrap status`
+2014-07-16 10:42:38,344 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 3] Sending channel request for `exec`
+2014-07-16 10:42:38,344 DEBUG [net.schmizz.concurrent.Promise] [user thread 3] Awaiting <<chan#5 / chanreq for exec>>
+2014-07-16 10:42:38,493 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Received window adjustment for 2097152 bytes
+2014-07-16 10:42:38,494 DEBUG [net.schmizz.sshj.connection.channel.Window$Remote] [reader] Increasing by 2097152 up to 2097152
+2014-07-16 10:42:38,494 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#5 / chanreq for exec>> to `SOME`
+2014-07-16 10:42:38,569 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got chan request for `exit-status`
+2014-07-16 10:42:38,569 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got EOF
+2014-07-16 10:42:38,570 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got close
+2014-07-16 10:42:38,570 DEBUG [net.schmizz.sshj.common.StreamCopier] [user thread 3] 0.0 KiB transferred  in 0.075 seconds (0.0 KiB/s)
+2014-07-16 10:42:38,570 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Sending EOF
+2014-07-16 10:42:38,570 DEBUG [net.schmizz.concurrent.Promise] [user thread 3] Awaiting <<chan#5 / close>>
+2014-07-16 10:42:38,570 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Sending close
+2014-07-16 10:42:38,570 DEBUG [net.schmizz.sshj.connection.ConnectionImpl] [reader] Forgetting `session` channel (#5)
+2014-07-16 10:42:38,570 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#5 / close>> to `SOME`
+2014-07-16 10:42:38,570 DEBUG [net.schmizz.sshj.common.StreamCopier] [user thread 3] 0.0 KiB transferred  in 0.0 seconds (NaN KiB/s)
+2014-07-16 10:42:38,571 DEBUG [jclouds.ssh] [user thread 3] << (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.90.41.12:22) acquired {output=, error=, exitStatus=1}
+2014-07-16 10:42:38,571 DEBUG [jclouds.ssh] [user thread 3] >> (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.90.41.12:22) acquiring ExecResponse(command=[/tmp/init-bootstrap stdout])
+2014-07-16 10:42:38,571 DEBUG [jclouds.ssh] [user thread 3] >> (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.90.41.12:22) acquiring Session()
+2014-07-16 10:42:38,571 DEBUG [net.schmizz.sshj.connection.ConnectionImpl] [user thread 3] Attaching `session` channel (#6)
+2014-07-16 10:42:38,572 DEBUG [net.schmizz.concurrent.Promise] [user thread 3] Awaiting <<chan#6 / open>>
+2014-07-16 10:42:38,768 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got EOF
+2014-07-16 10:42:38,769 DEBUG [net.schmizz.sshj.common.StreamCopier] [user thread 1] 0.0 KiB transferred  in 1.1 seconds (0.0 KiB/s)
+2014-07-16 10:42:38,769 DEBUG [net.schmizz.concurrent.Promise] [user thread 1] Awaiting <<chan#4 / close>>
+2014-07-16 10:42:38,769 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got chan request for `exit-status`
+2014-07-16 10:42:38,769 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got close
+2014-07-16 10:42:38,769 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Sending EOF
+2014-07-16 10:42:38,770 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Sending close
+2014-07-16 10:42:38,770 DEBUG [net.schmizz.sshj.connection.ConnectionImpl] [reader] Forgetting `session` channel (#4)
+2014-07-16 10:42:38,770 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#4 / close>> to `SOME`
+2014-07-16 10:42:38,770 DEBUG [net.schmizz.sshj.common.StreamCopier] [user thread 1] 0.0 KiB transferred  in 0.0 seconds (NaN KiB/s)
+2014-07-16 10:42:38,770 DEBUG [jclouds.ssh] [user thread 1] << (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.81.195.8:22) acquired {output=, error=, exitStatus=0}
+2014-07-16 10:42:38,771 DEBUG [jclouds.ssh] [user thread 2] >> (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.81.195.8:22) acquiring ExecResponse(command=[/tmp/init-bootstrap status])
+2014-07-16 10:42:38,772 DEBUG [jclouds.ssh] [user thread 2] >> (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.81.195.8:22) acquiring Session()
+2014-07-16 10:42:38,772 DEBUG [net.schmizz.sshj.connection.ConnectionImpl] [user thread 2] Attaching `session` channel (#5)
+2014-07-16 10:42:38,772 DEBUG [net.schmizz.concurrent.Promise] [user thread 2] Awaiting <<chan#5 / open>>
+2014-07-16 10:42:38,901 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Initialized - < session channel: id=6, recipient=2, localWin=[winSize=2097152], remoteWin=[winSize=0] >
+2014-07-16 10:42:38,901 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#6 / open>> to `SOME`
+2014-07-16 10:42:38,901 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 3] Sending channel request for `pty-req`
+2014-07-16 10:42:38,902 DEBUG [net.schmizz.concurrent.Promise] [user thread 3] Awaiting <<chan#6 / chanreq for pty-req>>
+2014-07-16 10:42:39,049 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#6 / chanreq for pty-req>> to `SOME`
+2014-07-16 10:42:39,049 DEBUG [jclouds.ssh] [user thread 3] << (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.90.41.12:22) acquired < session channel: id=6, recipient=2, localWin=[winSize=2097152], remoteWin=[winSize=0] >
+2014-07-16 10:42:39,049 INFO  [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 3] Will request to exec `/tmp/init-bootstrap stdout`
+2014-07-16 10:42:39,049 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 3] Sending channel request for `exec`
+2014-07-16 10:42:39,050 DEBUG [net.schmizz.concurrent.Promise] [user thread 3] Awaiting <<chan#6 / chanreq for exec>>
+2014-07-16 10:42:39,112 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Initialized - < session channel: id=5, recipient=1, localWin=[winSize=2097152], remoteWin=[winSize=0] >
+2014-07-16 10:42:39,112 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#5 / open>> to `SOME`
+2014-07-16 10:42:39,112 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 2] Sending channel request for `pty-req`
+2014-07-16 10:42:39,113 DEBUG [net.schmizz.concurrent.Promise] [user thread 2] Awaiting <<chan#5 / chanreq for pty-req>>
+2014-07-16 10:42:39,196 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Received window adjustment for 2097152 bytes
+2014-07-16 10:42:39,196 DEBUG [net.schmizz.sshj.connection.channel.Window$Remote] [reader] Increasing by 2097152 up to 2097152
+2014-07-16 10:42:39,197 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#6 / chanreq for exec>> to `SOME`
+2014-07-16 10:42:39,246 DEBUG [net.schmizz.sshj.connection.channel.Window$Local] [reader] Consuming by 27 down to 2097125
+2014-07-16 10:42:39,246 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got EOF
+2014-07-16 10:42:39,247 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got chan request for `exit-status`
+2014-07-16 10:42:39,247 DEBUG [net.schmizz.sshj.common.StreamCopier] [user thread 3] 0.0263671875 KiB transferred  in 0.05 seconds (0.52734375 KiB/s)
+2014-07-16 10:42:39,247 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got close
+2014-07-16 10:42:39,247 DEBUG [net.schmizz.concurrent.Promise] [user thread 3] Awaiting <<chan#6 / close>>
+2014-07-16 10:42:39,247 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Sending EOF
+2014-07-16 10:42:39,247 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Sending close
+2014-07-16 10:42:39,247 DEBUG [net.schmizz.sshj.connection.ConnectionImpl] [reader] Forgetting `session` channel (#6)
+2014-07-16 10:42:39,248 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#6 / close>> to `SOME`
+2014-07-16 10:42:39,248 DEBUG [net.schmizz.sshj.common.StreamCopier] [user thread 3] 0.0 KiB transferred  in 0.0 seconds (NaN KiB/s)
+2014-07-16 10:42:39,248 DEBUG [jclouds.ssh] [user thread 3] << (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.90.41.12:22) acquired {output=Reloading sshd: [  OK  ]
+, error=, exitStatus=0}
+2014-07-16 10:42:39,248 DEBUG [jclouds.ssh] [user thread 3] >> (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.90.41.12:22) acquiring ExecResponse(command=[/tmp/init-bootstrap stderr])
+2014-07-16 10:42:39,248 DEBUG [jclouds.ssh] [user thread 3] >> (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.90.41.12:22) acquiring Session()
+2014-07-16 10:42:39,249 DEBUG [net.schmizz.sshj.connection.ConnectionImpl] [user thread 3] Attaching `session` channel (#7)
+2014-07-16 10:42:39,249 DEBUG [net.schmizz.concurrent.Promise] [user thread 3] Awaiting <<chan#7 / open>>
+2014-07-16 10:42:39,263 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#5 / chanreq for pty-req>> to `SOME`
+2014-07-16 10:42:39,264 DEBUG [jclouds.ssh] [user thread 2] << (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.81.195.8:22) acquired < session channel: id=5, recipient=1, localWin=[winSize=2097152], remoteWin=[winSize=0] >
+2014-07-16 10:42:39,264 INFO  [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 2] Will request to exec `/tmp/init-bootstrap status`
+2014-07-16 10:42:39,264 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 2] Sending channel request for `exec`
+2014-07-16 10:42:39,264 DEBUG [net.schmizz.concurrent.Promise] [user thread 2] Awaiting <<chan#5 / chanreq for exec>>
+2014-07-16 10:42:39,418 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Received window adjustment for 2097152 bytes
+2014-07-16 10:42:39,419 DEBUG [net.schmizz.sshj.connection.channel.Window$Remote] [reader] Increasing by 2097152 up to 2097152
+2014-07-16 10:42:39,419 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#5 / chanreq for exec>> to `SOME`
+2014-07-16 10:42:39,500 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got chan request for `exit-status`
+2014-07-16 10:42:39,501 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got EOF
+2014-07-16 10:42:39,501 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got close
+2014-07-16 10:42:39,501 DEBUG [net.schmizz.sshj.common.StreamCopier] [user thread 2] 0.0 KiB transferred  in 0.082 seconds (0.0 KiB/s)
+2014-07-16 10:42:39,501 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Sending EOF
+2014-07-16 10:42:39,501 DEBUG [net.schmizz.concurrent.Promise] [user thread 2] Awaiting <<chan#5 / close>>
+2014-07-16 10:42:39,502 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Sending close
+2014-07-16 10:42:39,502 DEBUG [net.schmizz.sshj.connection.ConnectionImpl] [reader] Forgetting `session` channel (#5)
+2014-07-16 10:42:39,502 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#5 / close>> to `SOME`
+2014-07-16 10:42:39,502 DEBUG [net.schmizz.sshj.common.StreamCopier] [user thread 2] 0.0 KiB transferred  in 0.0 seconds (NaN KiB/s)
+2014-07-16 10:42:39,502 DEBUG [jclouds.ssh] [user thread 2] << (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.81.195.8:22) acquired {output=, error=, exitStatus=1}
+2014-07-16 10:42:39,503 DEBUG [jclouds.ssh] [user thread 2] >> (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.81.195.8:22) acquiring ExecResponse(command=[/tmp/init-bootstrap stdout])
+2014-07-16 10:42:39,503 DEBUG [jclouds.ssh] [user thread 2] >> (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.81.195.8:22) acquiring Session()
+2014-07-16 10:42:39,503 DEBUG [net.schmizz.sshj.connection.ConnectionImpl] [user thread 2] Attaching `session` channel (#6)
+2014-07-16 10:42:39,503 DEBUG [net.schmizz.concurrent.Promise] [user thread 2] Awaiting <<chan#6 / open>>
+2014-07-16 10:42:39,579 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Initialized - < session channel: id=7, recipient=1, localWin=[winSize=2097152], remoteWin=[winSize=0] >
+2014-07-16 10:42:39,580 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#7 / open>> to `SOME`
+2014-07-16 10:42:39,580 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 3] Sending channel request for `pty-req`
+2014-07-16 10:42:39,580 DEBUG [net.schmizz.concurrent.Promise] [user thread 3] Awaiting <<chan#7 / chanreq for pty-req>>
+2014-07-16 10:42:39,727 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#7 / chanreq for pty-req>> to `SOME`
+2014-07-16 10:42:39,728 DEBUG [jclouds.ssh] [user thread 3] << (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.90.41.12:22) acquired < session channel: id=7, recipient=1, localWin=[winSize=2097152], remoteWin=[winSize=0] >
+2014-07-16 10:42:39,728 INFO  [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 3] Will request to exec `/tmp/init-bootstrap stderr`
+2014-07-16 10:42:39,728 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 3] Sending channel request for `exec`
+2014-07-16 10:42:39,728 DEBUG [net.schmizz.concurrent.Promise] [user thread 3] Awaiting <<chan#7 / chanreq for exec>>
+2014-07-16 10:42:39,839 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Initialized - < session channel: id=6, recipient=2, localWin=[winSize=2097152], remoteWin=[winSize=0] >
+2014-07-16 10:42:39,839 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#6 / open>> to `SOME`
+2014-07-16 10:42:39,840 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 2] Sending channel request for `pty-req`
+2014-07-16 10:42:39,840 DEBUG [net.schmizz.concurrent.Promise] [user thread 2] Awaiting <<chan#6 / chanreq for pty-req>>
+2014-07-16 10:42:39,876 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Received window adjustment for 2097152 bytes
+2014-07-16 10:42:39,877 DEBUG [net.schmizz.sshj.connection.channel.Window$Remote] [reader] Increasing by 2097152 up to 2097152
+2014-07-16 10:42:39,877 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#7 / chanreq for exec>> to `SOME`
+2014-07-16 10:42:39,921 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got EOF
+2014-07-16 10:42:39,921 DEBUG [net.schmizz.sshj.common.StreamCopier] [user thread 3] 0.0 KiB transferred  in 0.044 seconds (0.0 KiB/s)
+2014-07-16 10:42:39,922 DEBUG [net.schmizz.concurrent.Promise] [user thread 3] Awaiting <<chan#7 / close>>
+2014-07-16 10:42:39,922 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got chan request for `exit-status`
+2014-07-16 10:42:39,922 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got close
+2014-07-16 10:42:39,922 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Sending EOF
+2014-07-16 10:42:39,922 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Sending close
+2014-07-16 10:42:39,922 DEBUG [net.schmizz.sshj.connection.ConnectionImpl] [reader] Forgetting `session` channel (#7)
+2014-07-16 10:42:39,923 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#7 / close>> to `SOME`
+2014-07-16 10:42:39,923 DEBUG [net.schmizz.sshj.common.StreamCopier] [user thread 3] 0.0 KiB transferred  in 0.0 seconds (NaN KiB/s)
+2014-07-16 10:42:39,923 DEBUG [jclouds.ssh] [user thread 3] << (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.90.41.12:22) acquired {output=, error=, exitStatus=0}
+2014-07-16 10:42:39,923 DEBUG [jclouds.ssh] [user thread 3] >> (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.90.41.12:22) acquiring ExecResponse(command=[/tmp/init-bootstrap exitstatus])
+2014-07-16 10:42:39,923 DEBUG [jclouds.ssh] [user thread 3] >> (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.90.41.12:22) acquiring Session()
+2014-07-16 10:42:39,924 DEBUG [net.schmizz.sshj.connection.ConnectionImpl] [user thread 3] Attaching `session` channel (#8)
+2014-07-16 10:42:39,924 DEBUG [net.schmizz.concurrent.Promise] [user thread 3] Awaiting <<chan#8 / open>>
+2014-07-16 10:42:39,993 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#6 / chanreq for pty-req>> to `SOME`
+2014-07-16 10:42:39,993 DEBUG [jclouds.ssh] [user thread 2] << (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.81.195.8:22) acquired < session channel: id=6, recipient=2, localWin=[winSize=2097152], remoteWin=[winSize=0] >
+2014-07-16 10:42:39,993 INFO  [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 2] Will request to exec `/tmp/init-bootstrap stdout`
+2014-07-16 10:42:39,993 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 2] Sending channel request for `exec`
+2014-07-16 10:42:39,994 DEBUG [net.schmizz.concurrent.Promise] [user thread 2] Awaiting <<chan#6 / chanreq for exec>>
+2014-07-16 10:42:40,146 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Received window adjustment for 2097152 bytes
+2014-07-16 10:42:40,147 DEBUG [net.schmizz.sshj.connection.channel.Window$Remote] [reader] Increasing by 2097152 up to 2097152
+2014-07-16 10:42:40,147 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#6 / chanreq for exec>> to `SOME`
+2014-07-16 10:42:40,188 DEBUG [net.schmizz.sshj.connection.channel.Window$Local] [reader] Consuming by 27 down to 2097125
+2014-07-16 10:42:40,189 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got chan request for `exit-status`
+2014-07-16 10:42:40,189 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got EOF
+2014-07-16 10:42:40,189 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got close
+2014-07-16 10:42:40,189 DEBUG [net.schmizz.sshj.common.StreamCopier] [user thread 2] 0.0263671875 KiB transferred  in 0.042 seconds (0.6277901785714285 KiB/s)
+2014-07-16 10:42:40,189 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Sending EOF
+2014-07-16 10:42:40,189 DEBUG [net.schmizz.concurrent.Promise] [user thread 2] Awaiting <<chan#6 / close>>
+2014-07-16 10:42:40,190 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Sending close
+2014-07-16 10:42:40,190 DEBUG [net.schmizz.sshj.connection.ConnectionImpl] [reader] Forgetting `session` channel (#6)
+2014-07-16 10:42:40,190 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#6 / close>> to `SOME`
+2014-07-16 10:42:40,190 DEBUG [net.schmizz.sshj.common.StreamCopier] [user thread 2] 0.0 KiB transferred  in 0.0 seconds (NaN KiB/s)
+2014-07-16 10:42:40,190 DEBUG [jclouds.ssh] [user thread 2] << (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.81.195.8:22) acquired {output=Reloading sshd: [  OK  ]
+, error=, exitStatus=0}
+2014-07-16 10:42:40,191 DEBUG [jclouds.ssh] [user thread 2] >> (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.81.195.8:22) acquiring ExecResponse(command=[/tmp/init-bootstrap stderr])
+2014-07-16 10:42:40,191 DEBUG [jclouds.ssh] [user thread 2] >> (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.81.195.8:22) acquiring Session()
+2014-07-16 10:42:40,191 DEBUG [net.schmizz.sshj.connection.ConnectionImpl] [user thread 2] Attaching `session` channel (#7)
+2014-07-16 10:42:40,191 DEBUG [net.schmizz.concurrent.Promise] [user thread 2] Awaiting <<chan#7 / open>>
+2014-07-16 10:42:40,251 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Initialized - < session channel: id=8, recipient=2, localWin=[winSize=2097152], remoteWin=[winSize=0] >
+2014-07-16 10:42:40,252 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#8 / open>> to `SOME`
+2014-07-16 10:42:40,252 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 3] Sending channel request for `pty-req`
+2014-07-16 10:42:40,252 DEBUG [net.schmizz.concurrent.Promise] [user thread 3] Awaiting <<chan#8 / chanreq for pty-req>>
+2014-07-16 10:42:40,401 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#8 / chanreq for pty-req>> to `SOME`
+2014-07-16 10:42:40,401 DEBUG [jclouds.ssh] [user thread 3] << (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.90.41.12:22) acquired < session channel: id=8, recipient=2, localWin=[winSize=2097152], remoteWin=[winSize=0] >
+2014-07-16 10:42:40,402 INFO  [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 3] Will request to exec `/tmp/init-bootstrap exitstatus`
+2014-07-16 10:42:40,402 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 3] Sending channel request for `exec`
+2014-07-16 10:42:40,402 DEBUG [net.schmizz.concurrent.Promise] [user thread 3] Awaiting <<chan#8 / chanreq for exec>>
+2014-07-16 10:42:40,532 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Initialized - < session channel: id=7, recipient=1, localWin=[winSize=2097152], remoteWin=[winSize=0] >
+2014-07-16 10:42:40,532 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#7 / open>> to `SOME`
+2014-07-16 10:42:40,532 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 2] Sending channel request for `pty-req`
+2014-07-16 10:42:40,532 DEBUG [net.schmizz.concurrent.Promise] [user thread 2] Awaiting <<chan#7 / chanreq for pty-req>>
+2014-07-16 10:42:40,552 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Received window adjustment for 2097152 bytes
+2014-07-16 10:42:40,552 DEBUG [net.schmizz.sshj.connection.channel.Window$Remote] [reader] Increasing by 2097152 up to 2097152
+2014-07-16 10:42:40,552 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#8 / chanreq for exec>> to `SOME`
+2014-07-16 10:42:40,592 DEBUG [net.schmizz.sshj.connection.channel.Window$Local] [reader] Consuming by 3 down to 2097149
+2014-07-16 10:42:40,593 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got chan request for `exit-status`
+2014-07-16 10:42:40,594 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got EOF
+2014-07-16 10:42:40,594 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got close
+2014-07-16 10:42:40,594 DEBUG [net.schmizz.sshj.common.StreamCopier] [user thread 3] 0.0029296875 KiB transferred  in 0.042 seconds (0.06975446428571429 KiB/s)
+2014-07-16 10:42:40,594 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Sending EOF
+2014-07-16 10:42:40,594 DEBUG [net.schmizz.concurrent.Promise] [user thread 3] Awaiting <<chan#8 / close>>
+2014-07-16 10:42:40,594 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Sending close
+2014-07-16 10:42:40,595 DEBUG [net.schmizz.sshj.connection.ConnectionImpl] [reader] Forgetting `session` channel (#8)
+2014-07-16 10:42:40,595 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#8 / close>> to `SOME`
+2014-07-16 10:42:40,595 DEBUG [net.schmizz.sshj.common.StreamCopier] [user thread 3] 0.0 KiB transferred  in 0.0 seconds (NaN KiB/s)
+2014-07-16 10:42:40,595 DEBUG [jclouds.ssh] [user thread 3] << (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.90.41.12:22) acquired {output=0
+, error=, exitStatus=0}
+2014-07-16 10:42:40,600 INFO  [net.schmizz.sshj.transport.TransportImpl] [user thread 0] Disconnected - BY_APPLICATION
+2014-07-16 10:42:40,600 DEBUG [net.schmizz.sshj.connection.ConnectionImpl] [user thread 0] Notified of net.schmizz.sshj.transport.TransportException: [BY_APPLICATION] Disconnected
+2014-07-16 10:42:40,601 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 0] Channel #0 got notified of net.schmizz.sshj.transport.TransportException: [BY_APPLICATION] Disconnected
+2014-07-16 10:42:40,602 DEBUG [net.schmizz.sshj.connection.ConnectionImpl] [user thread 0] Forgetting `session` channel (#0)
+2014-07-16 10:42:40,602 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Setting <<chan#0 / close>> to `SOME`
+2014-07-16 10:42:40,602 DEBUG [net.schmizz.sshj.transport.TransportImpl] [user thread 0] Sending SSH_MSG_DISCONNECT: reason=[BY_APPLICATION], msg=[]
+2014-07-16 10:42:40,602 DEBUG [net.schmizz.concurrent.Promise] [user thread 0] Setting <<transport close>> to `SOME`
+2014-07-16 10:42:40,602 DEBUG [net.schmizz.sshj.transport.Reader] [reader] Stopping
+2014-07-16 10:42:40,685 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#7 / chanreq for pty-req>> to `SOME`
+2014-07-16 10:42:40,685 DEBUG [jclouds.ssh] [user thread 2] << (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.81.195.8:22) acquired < session channel: id=7, recipient=1, localWin=[winSize=2097152], remoteWin=[winSize=0] >
+2014-07-16 10:42:40,685 INFO  [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 2] Will request to exec `/tmp/init-bootstrap stderr`
+2014-07-16 10:42:40,685 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 2] Sending channel request for `exec`
+2014-07-16 10:42:40,686 DEBUG [net.schmizz.concurrent.Promise] [user thread 2] Awaiting <<chan#7 / chanreq for exec>>
+2014-07-16 10:42:40,839 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Received window adjustment for 2097152 bytes
+2014-07-16 10:42:40,839 DEBUG [net.schmizz.sshj.connection.channel.Window$Remote] [reader] Increasing by 2097152 up to 2097152
+2014-07-16 10:42:40,839 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#7 / chanreq for exec>> to `SOME`
+2014-07-16 10:42:40,884 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got chan request for `exit-status`
+2014-07-16 10:42:40,884 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got EOF
+2014-07-16 10:42:40,884 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got close
+2014-07-16 10:42:40,884 DEBUG [net.schmizz.sshj.common.StreamCopier] [user thread 2] 0.0 KiB transferred  in 0.045 seconds (0.0 KiB/s)
+2014-07-16 10:42:40,884 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Sending EOF
+2014-07-16 10:42:40,884 DEBUG [net.schmizz.concurrent.Promise] [user thread 2] Awaiting <<chan#7 / close>>
+2014-07-16 10:42:40,885 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Sending close
+2014-07-16 10:42:40,885 DEBUG [net.schmizz.sshj.connection.ConnectionImpl] [reader] Forgetting `session` channel (#7)
+2014-07-16 10:42:40,885 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#7 / close>> to `SOME`
+2014-07-16 10:42:40,885 DEBUG [net.schmizz.sshj.common.StreamCopier] [user thread 2] 0.0 KiB transferred  in 0.0 seconds (NaN KiB/s)
+2014-07-16 10:42:40,885 DEBUG [jclouds.ssh] [user thread 2] << (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.81.195.8:22) acquired {output=, error=, exitStatus=0}
+2014-07-16 10:42:40,886 DEBUG [jclouds.ssh] [user thread 2] >> (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.81.195.8:22) acquiring ExecResponse(command=[/tmp/init-bootstrap exitstatus])
+2014-07-16 10:42:40,886 DEBUG [jclouds.ssh] [user thread 2] >> (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.81.195.8:22) acquiring Session()
+2014-07-16 10:42:40,886 DEBUG [net.schmizz.sshj.connection.ConnectionImpl] [user thread 2] Attaching `session` channel (#8)
+2014-07-16 10:42:40,886 DEBUG [net.schmizz.concurrent.Promise] [user thread 2] Awaiting <<chan#8 / open>>
+2014-07-16 10:42:41,225 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Initialized - < session channel: id=8, recipient=2, localWin=[winSize=2097152], remoteWin=[winSize=0] >
+2014-07-16 10:42:41,225 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#8 / open>> to `SOME`
+2014-07-16 10:42:41,225 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 2] Sending channel request for `pty-req`
+2014-07-16 10:42:41,225 DEBUG [net.schmizz.concurrent.Promise] [user thread 2] Awaiting <<chan#8 / chanreq for pty-req>>
+2014-07-16 10:42:41,378 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#8 / chanreq for pty-req>> to `SOME`
+2014-07-16 10:42:41,378 DEBUG [jclouds.ssh] [user thread 2] << (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.81.195.8:22) acquired < session channel: id=8, recipient=2, localWin=[winSize=2097152], remoteWin=[winSize=0] >
+2014-07-16 10:42:41,378 INFO  [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 2] Will request to exec `/tmp/init-bootstrap exitstatus`
+2014-07-16 10:42:41,378 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 2] Sending channel request for `exec`
+2014-07-16 10:42:41,379 DEBUG [net.schmizz.concurrent.Promise] [user thread 2] Awaiting <<chan#8 / chanreq for exec>>
+2014-07-16 10:42:41,532 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Received window adjustment for 2097152 bytes
+2014-07-16 10:42:41,532 DEBUG [net.schmizz.sshj.connection.channel.Window$Remote] [reader] Increasing by 2097152 up to 2097152
+2014-07-16 10:42:41,532 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#8 / chanreq for exec>> to `SOME`
+2014-07-16 10:42:41,578 DEBUG [net.schmizz.sshj.connection.channel.Window$Local] [reader] Consuming by 3 down to 2097149
+2014-07-16 10:42:41,579 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got chan request for `exit-status`
+2014-07-16 10:42:41,579 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got EOF
+2014-07-16 10:42:41,579 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Got close
+2014-07-16 10:42:41,579 DEBUG [net.schmizz.sshj.common.StreamCopier] [user thread 2] 0.0029296875 KiB transferred  in 0.047 seconds (0.06233377659574468 KiB/s)
+2014-07-16 10:42:41,579 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Sending EOF
+2014-07-16 10:42:41,579 DEBUG [net.schmizz.concurrent.Promise] [user thread 2] Awaiting <<chan#8 / close>>
+2014-07-16 10:42:41,579 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [reader] Sending close
+2014-07-16 10:42:41,579 DEBUG [net.schmizz.sshj.connection.ConnectionImpl] [reader] Forgetting `session` channel (#8)
+2014-07-16 10:42:41,580 DEBUG [net.schmizz.concurrent.Promise] [reader] Setting <<chan#8 / close>> to `SOME`
+2014-07-16 10:42:41,580 DEBUG [net.schmizz.sshj.common.StreamCopier] [user thread 2] 0.0 KiB transferred  in 0.0 seconds (NaN KiB/s)
+2014-07-16 10:42:41,580 DEBUG [jclouds.ssh] [user thread 2] << (ec2-user:rsa[fingerprint(5c:77:c7:b5:be:13:89:04:09:47:8e:a1:c5:4b:07:dd),sha1(0d:fe:c1:7d:03:a6:3e:35:be:39:76:b7:78:bf:a1:4b:88:09:64:b0)]@54.81.195.8:22) acquired {output=0
+, error=, exitStatus=0}
+2014-07-16 10:42:41,581 INFO  [net.schmizz.sshj.transport.TransportImpl] [user thread 1] Disconnected - BY_APPLICATION
+2014-07-16 10:42:41,581 DEBUG [net.schmizz.sshj.connection.ConnectionImpl] [user thread 1] Notified of net.schmizz.sshj.transport.TransportException: [BY_APPLICATION] Disconnected
+2014-07-16 10:42:41,581 DEBUG [net.schmizz.sshj.connection.channel.direct.SessionChannel] [user thread 1] Channel #0 got notified of net.schmizz.sshj.transport.TransportException: [BY_APPLICATION] Disconnected
+2014-07-16 10:42:41,581 DEBUG [net.schmizz.sshj.connection.ConnectionImpl] [user thread 1] Forgetting `session` channel (#0)
+2014-07-16 10:42:41,581 DEBUG [net.schmizz.concurrent.Promise] [user thread 1] Setting <<chan#0 / close>> to `SOME`
+2014-07-16 10:42:41,582 DEBUG [net.schmizz.sshj.transport.TransportImpl] [user thread 1] Sending SSH_MSG_DISCONNECT: reason=[BY_APPLICATION], msg=[]
+2014-07-16 10:42:41,582 DEBUG [net.schmizz.sshj.transport.Reader] [reader] Stopping
+2014-07-16 10:42:41,582 DEBUG [net.schmizz.concurrent.Promise] [user thread 1] Setting <<transport close>> to `SOME`

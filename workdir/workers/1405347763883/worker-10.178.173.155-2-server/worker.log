@@ -1,0 +1,147 @@
+INFO  2014-07-14 14:22:58,232 [main] com.hazelcast.stabilizer.worker.Worker: Starting Stabilizer Worker
+INFO  2014-07-14 14:22:58,235 [main] com.hazelcast.stabilizer.worker.Worker: jvm input arguments = [-XX:OnOutOfMemoryError=""touch worker.oome"", -DSTABILIZER_HOME=/home/users/stabilizer/hazelcast-stabilizer-0.3-SNAPSHOT, -Dhazelcast.logging.type=log4j, -DworkerId=worker-10.178.173.155-2-server, -DworkerMode=server, -Dlog4j.configuration=file:/home/users/stabilizer/hazelcast-stabilizer-0.3-SNAPSHOT/conf/worker-log4j.xml, -ea, -Xms2G, -Xmx2G, -XX:+PrintGC, -XX:+HeapDumpOnOutOfMemoryError]
+INFO  2014-07-14 14:22:58,247 [main] com.hazelcast.stabilizer.worker.Worker: java.class.path=/home/users/stabilizer/hazelcast-stabilizer-0.3-SNAPSHOT/lib/hazelcast-3.2.3.jar:/home/users/stabilizer/hazelcast-stabilizer-0.3-SNAPSHOT/lib/jopt-simple-4.4.jar:/home/users/stabilizer/hazelcast-stabilizer-0.3-SNAPSHOT/lib/commons-lang3-3.3.2.jar:/home/users/stabilizer/hazelcast-stabilizer-0.3-SNAPSHOT/lib/hazelcast-client-3.2.3.jar:/home/users/stabilizer/hazelcast-stabilizer-0.3-SNAPSHOT/lib/log4j-1.2.17.jar:/home/users/stabilizer/hazelcast-stabilizer-0.3-SNAPSHOT/lib/stabilizer-0.3-SNAPSHOT.jar:/home/users/stabilizer/hazelcast-stabilizer-0.3-SNAPSHOT/lib/junit-4.11.jar:/home/users/stabilizer/hazelcast-stabilizer-0.3-SNAPSHOT/workers/1405347763883/lib/yourproject-1.0-SNAPSHOT.jar
+INFO  2014-07-14 14:22:58,247 [main] com.hazelcast.stabilizer.worker.Worker: java.home=/home/users/stabilizer/jdk1.7.0_55/jre
+INFO  2014-07-14 14:22:58,248 [main] com.hazelcast.stabilizer.worker.Worker: java.vendor=Oracle Corporation
+INFO  2014-07-14 14:22:58,248 [main] com.hazelcast.stabilizer.worker.Worker: java.vendor.url=http://java.oracle.com/
+INFO  2014-07-14 14:22:58,248 [main] com.hazelcast.stabilizer.worker.Worker: sun.java.command=com.hazelcast.stabilizer.worker.Worker /tmp/hazelcast5319958255592512679xml /tmp/client-hazelcast5696078903594014990xml
+INFO  2014-07-14 14:22:58,248 [main] com.hazelcast.stabilizer.worker.Worker: java.version=1.7.0_55
+INFO  2014-07-14 14:22:58,248 [main] com.hazelcast.stabilizer.worker.Worker: os.arch=amd64
+INFO  2014-07-14 14:22:58,248 [main] com.hazelcast.stabilizer.worker.Worker: os.name=Linux
+INFO  2014-07-14 14:22:58,248 [main] com.hazelcast.stabilizer.worker.Worker: os.version=3.10.35-43.137.amzn1.x86_64
+INFO  2014-07-14 14:22:58,248 [main] com.hazelcast.stabilizer.worker.Worker: user.dir=/home/users/stabilizer/hazelcast-stabilizer-0.3-SNAPSHOT/workers/1405347763883/worker-10.178.173.155-2-server
+INFO  2014-07-14 14:22:58,249 [main] com.hazelcast.stabilizer.worker.Worker: user.home=/home/users/stabilizer
+INFO  2014-07-14 14:22:58,249 [main] com.hazelcast.stabilizer.worker.Worker: user.name=stabilizer
+INFO  2014-07-14 14:22:58,249 [main] com.hazelcast.stabilizer.worker.Worker: STABILIZER_HOME=/home/users/stabilizer/hazelcast-stabilizer-0.3-SNAPSHOT
+INFO  2014-07-14 14:22:58,249 [main] com.hazelcast.stabilizer.worker.Worker: hazelcast.logging.type=log4j
+INFO  2014-07-14 14:22:58,249 [main] com.hazelcast.stabilizer.worker.Worker: log4j.configuration=file:/home/users/stabilizer/hazelcast-stabilizer-0.3-SNAPSHOT/conf/worker-log4j.xml
+INFO  2014-07-14 14:22:58,249 [main] com.hazelcast.stabilizer.worker.Worker: Worker id:worker-10.178.173.155-2-server
+INFO  2014-07-14 14:22:58,249 [main] com.hazelcast.stabilizer.worker.Worker: Worker hz config file:/tmp/hazelcast5319958255592512679xml
+INFO  2014-07-14 14:22:58,295 [main] com.hazelcast.stabilizer.worker.Worker: <hazelcast xsi:schemaLocation="http://www.hazelcast.com/schema/config
+                               http://www.hazelcast.com/schema/config/hazelcast-config-3.2.xsd"
+           xmlns="http://www.hazelcast.com/schema/config"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <group>
+        <name>workers</name>
+    </group>
+
+    <network>
+        <port port-count="200" auto-increment="true">5701</port>
+        <join>
+            <multicast enabled="false"/>
+            <tcp-ip enabled="true">
+                <member>10.178.173.155:5701</member>
+
+            </tcp-ip>
+        </join>
+    </network>
+
+</hazelcast>
+INFO  2014-07-14 14:22:58,295 [main] com.hazelcast.stabilizer.worker.Worker: Client hz config file:/tmp/client-hazelcast5696078903594014990xml
+INFO  2014-07-14 14:22:58,296 [main] com.hazelcast.stabilizer.worker.Worker: <?xml version="1.0" encoding="UTF-8"?>
+
+<hazelcast-client
+        xsi:schemaLocation="http://www.hazelcast.com/schema/client-config
+            http://www.hazelcast.com/schema/config/hazelcast-client-config-3.2.xsd"
+        xmlns="http://www.hazelcast.com/schema/client-config"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <group>
+        <name>workers</name>
+    </group>
+
+    <network>
+        <cluster-members>
+            <address>10.178.173.155:5701</address>
+
+        </cluster-members>
+    </network>
+
+</hazelcast-client>
+INFO  2014-07-14 14:22:58,296 [main] com.hazelcast.stabilizer.worker.Worker: Worker mode:server
+INFO  2014-07-14 14:22:58,296 [main] com.hazelcast.stabilizer.worker.Worker: Creating Server HazelcastInstance
+INFO  2014-07-14 14:22:59,368 [main] com.hazelcast.instance.DefaultAddressPicker: null [workers] [3.2.3] Interfaces is disabled, trying to pick one address from TCP-IP config addresses: [10.178.173.155]
+INFO  2014-07-14 14:22:59,371 [main] com.hazelcast.instance.DefaultAddressPicker: null [workers] [3.2.3] Prefer IPv4 stack is true.
+INFO  2014-07-14 14:22:59,448 [main] com.hazelcast.instance.DefaultAddressPicker: null [workers] [3.2.3] Picked Address[10.178.173.155]:5701, using socket ServerSocket[addr=/0:0:0:0:0:0:0:0,localport=5701], bind any local is true
+INFO  2014-07-14 14:22:59,970 [main] com.hazelcast.system: [10.178.173.155]:5701 [workers] [3.2.3] Hazelcast Community Edition 3.2.3 (20140617) starting at Address[10.178.173.155]:5701
+INFO  2014-07-14 14:22:59,971 [main] com.hazelcast.system: [10.178.173.155]:5701 [workers] [3.2.3] Copyright (C) 2008-2014 Hazelcast.com
+INFO  2014-07-14 14:22:59,980 [main] com.hazelcast.instance.Node: [10.178.173.155]:5701 [workers] [3.2.3] Creating TcpIpJoiner
+INFO  2014-07-14 14:22:59,981 [main] com.hazelcast.core.LifecycleService: [10.178.173.155]:5701 [workers] [3.2.3] Address[10.178.173.155]:5701 is STARTING
+INFO  2014-07-14 14:23:00,303 [main] com.hazelcast.cluster.TcpIpJoiner: [10.178.173.155]:5701 [workers] [3.2.3] 
+
+
+Members [1] {
+	Member [10.178.173.155]:5701 this
+}
+
+INFO  2014-07-14 14:23:00,521 [main] com.hazelcast.core.LifecycleService: [10.178.173.155]:5701 [workers] [3.2.3] Address[10.178.173.155]:5701 is STARTED
+INFO  2014-07-14 14:23:00,521 [main] com.hazelcast.stabilizer.worker.Worker: Successfully created Server HazelcastInstance
+INFO  2014-07-14 14:23:00,576 [main] com.hazelcast.stabilizer.worker.Worker: Successfully started Hazelcast Stabilizer Worker:worker-10.178.173.155-2-server
+INFO  2014-07-14 14:23:00,703 [hz._hzInstance_1_workers.IO.thread-Acceptor] com.hazelcast.nio.SocketAcceptor: [10.178.173.155]:5701 [workers] [3.2.3] Accepting socket connection from /10.178.173.155:40209
+INFO  2014-07-14 14:23:00,716 [hz._hzInstance_1_workers.IO.thread-Acceptor] com.hazelcast.nio.TcpIpConnectionManager: [10.178.173.155]:5701 [workers] [3.2.3] 5701 accepted socket connection from /10.178.173.155:40209
+INFO  2014-07-14 14:23:06,710 [hz._hzInstance_1_workers.global-operation.thread-2] com.hazelcast.cluster.ClusterService: [10.178.173.155]:5701 [workers] [3.2.3] 
+
+Members [2] {
+	Member [10.178.173.155]:5701 this
+	Member [10.178.173.155]:5702
+}
+
+INFO  2014-07-14 14:23:11,705 [hz._hzInstance_1_workers.IO.thread-Acceptor] com.hazelcast.nio.SocketAcceptor: [10.178.173.155]:5701 [workers] [3.2.3] Accepting socket connection from /10.178.173.155:54631
+INFO  2014-07-14 14:23:11,705 [hz._hzInstance_1_workers.IO.thread-Acceptor] com.hazelcast.nio.TcpIpConnectionManager: [10.178.173.155]:5701 [workers] [3.2.3] 5701 accepted socket connection from /10.178.173.155:54631
+INFO  2014-07-14 14:23:11,803 [hz._hzInstance_1_workers.IO.thread-Acceptor] com.hazelcast.nio.SocketAcceptor: [10.178.173.155]:5701 [workers] [3.2.3] Accepting socket connection from /10.178.173.155:54633
+INFO  2014-07-14 14:23:11,803 [hz._hzInstance_1_workers.IO.thread-Acceptor] com.hazelcast.nio.TcpIpConnectionManager: [10.178.173.155]:5701 [workers] [3.2.3] 5701 accepted socket connection from /10.178.173.155:54633
+INFO  2014-07-14 14:23:11,837 [hz._hzInstance_1_workers.client.thread-1] com.hazelcast.client.AuthenticationRequest: [10.178.173.155]:5701 [workers] [3.2.3] Received auth from Connection [/10.178.173.155:54631 -> null] live=true, client=true, type=JAVA_CLIENT, successfully authenticated
+INFO  2014-07-14 14:23:11,848 [hz._hzInstance_1_workers.client.thread-2] com.hazelcast.client.AuthenticationRequest: [10.178.173.155]:5701 [workers] [3.2.3] Received auth from Connection [/10.178.173.155:54633 -> null] live=true, client=true, type=JAVA_CLIENT, successfully authenticated
+INFO  2014-07-14 14:23:11,901 [hz._hzInstance_1_workers.IO.thread-Acceptor] com.hazelcast.nio.SocketAcceptor: [10.178.173.155]:5701 [workers] [3.2.3] Accepting socket connection from /10.178.173.155:54635
+INFO  2014-07-14 14:23:11,901 [hz._hzInstance_1_workers.IO.thread-Acceptor] com.hazelcast.nio.TcpIpConnectionManager: [10.178.173.155]:5701 [workers] [3.2.3] 5701 accepted socket connection from /10.178.173.155:54635
+INFO  2014-07-14 14:23:11,913 [hz._hzInstance_1_workers.client.thread-5] com.hazelcast.client.AuthenticationRequest: [10.178.173.155]:5701 [workers] [3.2.3] Received auth from Connection [/10.178.173.155:54635 -> null] live=true, client=true, type=JAVA_CLIENT, successfully authenticated
+INFO  2014-07-14 14:23:11,918 [hz._hzInstance_1_workers.client.thread-6] com.hazelcast.partition.InternalPartitionService: [10.178.173.155]:5701 [workers] [3.2.3] Initializing cluster partition table first arrangement...
+INFO  2014-07-14 14:23:11,960 [hz._hzInstance_1_workers.IO.thread-Acceptor] com.hazelcast.nio.SocketAcceptor: [10.178.173.155]:5701 [workers] [3.2.3] Accepting socket connection from /10.178.173.155:54636
+INFO  2014-07-14 14:23:11,993 [hz._hzInstance_1_workers.IO.thread-Acceptor] com.hazelcast.nio.TcpIpConnectionManager: [10.178.173.155]:5701 [workers] [3.2.3] 5701 accepted socket connection from /10.178.173.155:54636
+INFO  2014-07-14 14:23:11,999 [hz._hzInstance_1_workers.client.thread-7] com.hazelcast.client.AuthenticationRequest: [10.178.173.155]:5701 [workers] [3.2.3] Received auth from Connection [/10.178.173.155:54636 -> null] live=true, client=true, type=JAVA_CLIENT, successfully authenticated
+INFO  2014-07-14 14:23:21,964 [Thread-0] com.hazelcast.stabilizer.worker.Worker: Init Test:
+TestCase{
+      id=
+    , class=yourgroupid.ExampleTest
+    , logFrequency=10000
+    , performanceUpdateFrequency=10000
+    , threadCount=1
+}
+INFO  2014-07-14 14:23:24,226 [Thread-0] com.hazelcast.stabilizer.worker.Worker: Calling test.setup()
+INFO  2014-07-14 14:23:24,229 [Thread-2] com.hazelcast.stabilizer.worker.Worker: Finished test.setup()
+INFO  2014-07-14 14:23:28,239 [Thread-0] com.hazelcast.stabilizer.worker.Worker: Calling test.localWarmup()
+INFO  2014-07-14 14:23:28,241 [Thread-3] com.hazelcast.stabilizer.worker.Worker: Finished test.localWarmup()
+INFO  2014-07-14 14:23:36,264 [Thread-0] com.hazelcast.stabilizer.worker.Worker: Starting test
+INFO  2014-07-14 14:24:30,545 [hz._hzInstance_1_workers.HealthMonitor] com.hazelcast.util.HealthMonitor: [10.178.173.155]:5701 [workers] [3.2.3] memory.used=194.1M, memory.free=1.7G, memory.total=1.9G, memory.max=1.9G, memory.used/total=9.80%, memory.used/max=9.80%, load.process=77.00%, load.system=100.00%, load.systemAverage=235.00%, thread.count=40, thread.peakCount=41, event.q.size=0, executor.q.async.size=0, executor.q.client.size=0, executor.q.operation.size=0, executor.q.query.size=0, executor.q.scheduled.size=0, executor.q.io.size=0, executor.q.system.size=0, executor.q.operation.size=0, executor.q.priorityOperation.size=0, executor.q.response.size=1, operations.remote.size=0, operations.running.size=0, proxy.count=2, clientEndpoint.count=4, connection.active.count=5, connection.count=5
+INFO  2014-07-14 14:25:00,547 [hz._hzInstance_1_workers.HealthMonitor] com.hazelcast.util.HealthMonitor: [10.178.173.155]:5701 [workers] [3.2.3] memory.used=382.6M, memory.free=1.6G, memory.total=1.9G, memory.max=1.9G, memory.used/total=19.33%, memory.used/max=19.33%, load.process=98.00%, load.system=100.00%, load.systemAverage=280.00%, thread.count=40, thread.peakCount=41, event.q.size=0, executor.q.async.size=0, executor.q.client.size=0, executor.q.operation.size=0, executor.q.query.size=0, executor.q.scheduled.size=0, executor.q.io.size=0, executor.q.system.size=0, executor.q.operation.size=0, executor.q.priorityOperation.size=0, executor.q.response.size=0, operations.remote.size=0, operations.running.size=0, proxy.count=2, clientEndpoint.count=4, connection.active.count=5, connection.count=5
+INFO  2014-07-14 14:25:30,548 [hz._hzInstance_1_workers.HealthMonitor] com.hazelcast.util.HealthMonitor: [10.178.173.155]:5701 [workers] [3.2.3] memory.used=554.2M, memory.free=1.4G, memory.total=1.9G, memory.max=1.9G, memory.used/total=28.00%, memory.used/max=28.00%, load.process=94.00%, load.system=100.00%, load.systemAverage=288.00%, thread.count=40, thread.peakCount=41, event.q.size=0, executor.q.async.size=0, executor.q.client.size=0, executor.q.operation.size=0, executor.q.query.size=0, executor.q.scheduled.size=0, executor.q.io.size=0, executor.q.system.size=0, executor.q.operation.size=1, executor.q.priorityOperation.size=0, executor.q.response.size=0, operations.remote.size=0, operations.running.size=0, proxy.count=2, clientEndpoint.count=4, connection.active.count=5, connection.count=5
+INFO  2014-07-14 14:26:00,549 [hz._hzInstance_1_workers.HealthMonitor] com.hazelcast.util.HealthMonitor: [10.178.173.155]:5701 [workers] [3.2.3] memory.used=264.7M, memory.free=1.7G, memory.total=1.9G, memory.max=1.9G, memory.used/total=13.37%, memory.used/max=13.37%, load.process=97.00%, load.system=100.00%, load.systemAverage=300.00%, thread.count=40, thread.peakCount=41, event.q.size=0, executor.q.async.size=0, executor.q.client.size=0, executor.q.operation.size=0, executor.q.query.size=0, executor.q.scheduled.size=0, executor.q.io.size=0, executor.q.system.size=0, executor.q.operation.size=1, executor.q.priorityOperation.size=0, executor.q.response.size=0, operations.remote.size=0, operations.running.size=0, proxy.count=2, clientEndpoint.count=4, connection.active.count=5, connection.count=5
+INFO  2014-07-14 14:26:30,551 [hz._hzInstance_1_workers.HealthMonitor] com.hazelcast.util.HealthMonitor: [10.178.173.155]:5701 [workers] [3.2.3] memory.used=486.4M, memory.free=1.5G, memory.total=1.9G, memory.max=1.9G, memory.used/total=24.57%, memory.used/max=24.57%, load.process=96.00%, load.system=100.00%, load.systemAverage=278.00%, thread.count=40, thread.peakCount=41, event.q.size=0, executor.q.async.size=0, executor.q.client.size=0, executor.q.operation.size=0, executor.q.query.size=0, executor.q.scheduled.size=0, executor.q.io.size=0, executor.q.system.size=0, executor.q.operation.size=0, executor.q.priorityOperation.size=0, executor.q.response.size=0, operations.remote.size=0, operations.running.size=0, proxy.count=2, clientEndpoint.count=4, connection.active.count=5, connection.count=5
+INFO  2014-07-14 14:27:00,597 [hz._hzInstance_1_workers.HealthMonitor] com.hazelcast.util.HealthMonitor: [10.178.173.155]:5701 [workers] [3.2.3] memory.used=187.2M, memory.free=1.8G, memory.total=1.9G, memory.max=1.9G, memory.used/total=9.46%, memory.used/max=9.46%, load.process=99.00%, load.system=100.00%, load.systemAverage=289.00%, thread.count=40, thread.peakCount=41, event.q.size=0, executor.q.async.size=0, executor.q.client.size=0, executor.q.operation.size=0, executor.q.query.size=0, executor.q.scheduled.size=0, executor.q.io.size=0, executor.q.system.size=0, executor.q.operation.size=0, executor.q.priorityOperation.size=0, executor.q.response.size=0, operations.remote.size=0, operations.running.size=0, proxy.count=2, clientEndpoint.count=4, connection.active.count=5, connection.count=5
+INFO  2014-07-14 14:27:30,605 [hz._hzInstance_1_workers.HealthMonitor] com.hazelcast.util.HealthMonitor: [10.178.173.155]:5701 [workers] [3.2.3] memory.used=406.1M, memory.free=1.5G, memory.total=1.9G, memory.max=1.9G, memory.used/total=20.51%, memory.used/max=20.51%, load.process=97.00%, load.system=100.00%, load.systemAverage=291.00%, thread.count=40, thread.peakCount=41, event.q.size=0, executor.q.async.size=0, executor.q.client.size=0, executor.q.operation.size=0, executor.q.query.size=0, executor.q.scheduled.size=0, executor.q.io.size=0, executor.q.system.size=0, executor.q.operation.size=0, executor.q.priorityOperation.size=0, executor.q.response.size=0, operations.remote.size=0, operations.running.size=0, proxy.count=2, clientEndpoint.count=4, connection.active.count=5, connection.count=5
+INFO  2014-07-14 14:28:00,613 [hz._hzInstance_1_workers.HealthMonitor] com.hazelcast.util.HealthMonitor: [10.178.173.155]:5701 [workers] [3.2.3] memory.used=113.0M, memory.free=1.8G, memory.total=1.9G, memory.max=1.9G, memory.used/total=5.71%, memory.used/max=5.71%, load.process=100.00%, load.system=100.00%, load.systemAverage=314.00%, thread.count=40, thread.peakCount=41, event.q.size=0, executor.q.async.size=1, executor.q.client.size=0, executor.q.operation.size=0, executor.q.query.size=0, executor.q.scheduled.size=1, executor.q.io.size=0, executor.q.system.size=0, executor.q.operation.size=0, executor.q.priorityOperation.size=0, executor.q.response.size=0, operations.remote.size=0, operations.running.size=0, proxy.count=2, clientEndpoint.count=4, connection.active.count=5, connection.count=5
+INFO  2014-07-14 14:28:30,621 [hz._hzInstance_1_workers.HealthMonitor] com.hazelcast.util.HealthMonitor: [10.178.173.155]:5701 [workers] [3.2.3] memory.used=328.6M, memory.free=1.6G, memory.total=1.9G, memory.max=1.9G, memory.used/total=16.60%, memory.used/max=16.60%, load.process=99.00%, load.system=100.00%, load.systemAverage=310.00%, thread.count=40, thread.peakCount=41, event.q.size=0, executor.q.async.size=0, executor.q.client.size=0, executor.q.operation.size=0, executor.q.query.size=0, executor.q.scheduled.size=0, executor.q.io.size=0, executor.q.system.size=0, executor.q.operation.size=0, executor.q.priorityOperation.size=0, executor.q.response.size=0, operations.remote.size=0, operations.running.size=0, proxy.count=2, clientEndpoint.count=4, connection.active.count=5, connection.count=5
+INFO  2014-07-14 14:28:39,246 [Thread-0] com.hazelcast.stabilizer.worker.Worker: Calling test.stop
+INFO  2014-07-14 14:28:39,246 [Thread-0] com.hazelcast.stabilizer.worker.Worker: Finished calling test.stop()
+INFO  2014-07-14 14:28:46,290 [Thread-0] com.hazelcast.stabilizer.worker.Worker: Calling test.localVerify()
+INFO  2014-07-14 14:28:46,292 [Thread-5] com.hazelcast.stabilizer.worker.Worker: Finished test.localVerify()
+INFO  2014-07-14 14:28:56,313 [Thread-0] com.hazelcast.stabilizer.worker.Worker: Calling test.localTeardown()
+INFO  2014-07-14 14:28:56,316 [Thread-6] com.hazelcast.stabilizer.worker.Worker: Finished test.localTeardown()
+INFO  2014-07-14 14:28:58,126 [hz._hzInstance_1_workers.IO.thread-in-1] com.hazelcast.nio.TcpIpConnection: [10.178.173.155]:5701 [workers] [3.2.3] Connection [Address[10.178.173.155]:54631] lost. Reason: java.io.EOFException[Remote socket closed!]
+INFO  2014-07-14 14:28:58,127 [hz._hzInstance_1_workers.IO.thread-in-1] com.hazelcast.client.ClientEngine: [10.178.173.155]:5701 [workers] [3.2.3] Destroying ClientEndpoint{conn=Connection [/10.178.173.155:54631 -> Address[10.178.173.155]:54631] live=false, client=true, type=JAVA_CLIENT, uuid='f5a53436-5188-4b0e-822d-6a5ce005f444', firstConnection=true, authenticated=true}
+INFO  2014-07-14 14:28:58,127 [hz._hzInstance_1_workers.IO.thread-in-1] com.hazelcast.client.ClientEngine: [10.178.173.155]:5701 [workers] [3.2.3] Destroying ClientEndpoint{conn=Connection [/10.178.173.155:54636 -> Address[10.178.173.155]:54636] live=true, client=true, type=JAVA_CLIENT, uuid='f5a53436-5188-4b0e-822d-6a5ce005f444', firstConnection=false, authenticated=true}
+INFO  2014-07-14 14:28:58,127 [hz._hzInstance_1_workers.IO.thread-in-1] com.hazelcast.nio.TcpIpConnection: [10.178.173.155]:5701 [workers] [3.2.3] Connection [Address[10.178.173.155]:54636] lost. Reason: Socket explicitly closed
+WARN  2014-07-14 14:28:58,128 [hz._hzInstance_1_workers.IO.thread-in-1] com.hazelcast.nio.ReadHandler: [10.178.173.155]:5701 [workers] [3.2.3] hz._hzInstance_1_workers.IO.thread-in-1 Closing socket to endpoint Address[10.178.173.155]:54631, Cause:java.io.EOFException: Remote socket closed!
+INFO  2014-07-14 14:28:58,224 [hz._hzInstance_1_workers.IO.thread-in-0] com.hazelcast.nio.TcpIpConnection: [10.178.173.155]:5701 [workers] [3.2.3] Connection [Address[10.178.173.155]:5702] lost. Reason: java.io.EOFException[Remote socket closed!]
+WARN  2014-07-14 14:28:58,224 [hz._hzInstance_1_workers.IO.thread-in-0] com.hazelcast.nio.ReadHandler: [10.178.173.155]:5701 [workers] [3.2.3] hz._hzInstance_1_workers.IO.thread-in-0 Closing socket to endpoint Address[10.178.173.155]:5702, Cause:java.io.EOFException: Remote socket closed!
+INFO  2014-07-14 14:28:58,288 [hz._hzInstance_1_workers.cached.thread-3] com.hazelcast.nio.SocketConnector: [10.178.173.155]:5701 [workers] [3.2.3] Connecting to /10.178.173.155:5702, timeout: 0, bind-any: true
+INFO  2014-07-14 14:28:58,289 [hz._hzInstance_1_workers.cached.thread-3] com.hazelcast.nio.SocketConnector: [10.178.173.155]:5701 [workers] [3.2.3] Could not connect to: /10.178.173.155:5702. Reason: SocketException[Connection refused to address /10.178.173.155:5702]
+INFO  2014-07-14 14:28:58,757 [hz._hzInstance_1_workers.IO.thread-in-2] com.hazelcast.nio.TcpIpConnection: [10.178.173.155]:5701 [workers] [3.2.3] Connection [Address[10.178.173.155]:54633] lost. Reason: java.io.EOFException[Remote socket closed!]
+INFO  2014-07-14 14:28:58,757 [hz._hzInstance_1_workers.IO.thread-in-2] com.hazelcast.client.ClientEngine: [10.178.173.155]:5701 [workers] [3.2.3] Destroying ClientEndpoint{conn=Connection [/10.178.173.155:54633 -> Address[10.178.173.155]:54633] live=false, client=true, type=JAVA_CLIENT, uuid='0c12673f-238c-4281-b9e4-2bddb2eaafc3', firstConnection=true, authenticated=true}
+INFO  2014-07-14 14:28:58,757 [hz._hzInstance_1_workers.IO.thread-in-2] com.hazelcast.client.ClientEngine: [10.178.173.155]:5701 [workers] [3.2.3] Destroying ClientEndpoint{conn=Connection [/10.178.173.155:54635 -> Address[10.178.173.155]:54635] live=true, client=true, type=JAVA_CLIENT, uuid='0c12673f-238c-4281-b9e4-2bddb2eaafc3', firstConnection=false, authenticated=true}
+INFO  2014-07-14 14:28:58,757 [hz._hzInstance_1_workers.IO.thread-in-2] com.hazelcast.nio.TcpIpConnection: [10.178.173.155]:5701 [workers] [3.2.3] Connection [Address[10.178.173.155]:54635] lost. Reason: Socket explicitly closed
+WARN  2014-07-14 14:28:58,758 [hz._hzInstance_1_workers.IO.thread-in-2] com.hazelcast.nio.ReadHandler: [10.178.173.155]:5701 [workers] [3.2.3] hz._hzInstance_1_workers.IO.thread-in-2 Closing socket to endpoint Address[10.178.173.155]:54633, Cause:java.io.EOFException: Remote socket closed!
+INFO  2014-07-14 14:28:58,758 [hz._hzInstance_1_workers.cached.thread-3] com.hazelcast.nio.SocketConnector: [10.178.173.155]:5701 [workers] [3.2.3] Connecting to /10.178.173.155:5702, timeout: 0, bind-any: true
+INFO  2014-07-14 14:28:58,758 [hz._hzInstance_1_workers.cached.thread-3] com.hazelcast.nio.SocketConnector: [10.178.173.155]:5701 [workers] [3.2.3] Could not connect to: /10.178.173.155:5702. Reason: SocketException[Connection refused to address /10.178.173.155:5702]
+INFO  2014-07-14 14:28:58,810 [hz.ShutdownThread] com.hazelcast.initializer: [10.178.173.155]:5701 [workers] [3.2.3] Destroying node initializer.
+INFO  2014-07-14 14:28:58,818 [hz.ShutdownThread] com.hazelcast.instance.Node: [10.178.173.155]:5701 [workers] [3.2.3] Hazelcast Shutdown is completed in 47 ms.
