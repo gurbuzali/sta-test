@@ -1,5 +1,6 @@
 .clover/
 target/
+workdir/logs/provisioner.log
 .project
 .classpath
 .settings/
