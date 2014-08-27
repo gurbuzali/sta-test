@@ -31,7 +31,7 @@ public class MapTransactionTest {
     private final static ILogger log = Logger.getLogger(MapTransactionTest.class);
 
     //props
-    public int threadCount = 10;
+    public int threadCount = 25;
     public int keyCount = 1000;
     public int logFrequency = 10000;
     public int performanceUpdateFrequency = 10000;
