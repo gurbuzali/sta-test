@@ -75,7 +75,7 @@ public class MapTransactionTest {
         spawner.awaitCompletion();
     }
 
-    @Verify
+    @Verify(global = true)
     public void verify() throws Exception {
         long[] amount = new long[keyCount];
 
