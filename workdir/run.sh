@@ -1,6 +1,6 @@
 #!/bin/bash
 
-provisioner --scale 30
+#provisioner --scale 30
 
 coordinator     --workerVmOptions "-ea -server -Xms2G -Xmx2G -XX:+PrintGC -XX:+HeapDumpOnOutOfMemoryError" \
                 --clientHzFile      ../conf/client-hazelcast.xml \
