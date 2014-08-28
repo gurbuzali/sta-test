@@ -14,14 +14,14 @@ import com.hazelcast.stabilizer.tests.annotations.Teardown;
 import com.hazelcast.stabilizer.tests.annotations.Verify;
 import com.hazelcast.stabilizer.tests.annotations.Warmup;
 import com.hazelcast.stabilizer.tests.utils.ThreadSpawner;
-import com.hazelcast.transaction.TransactionException;
-import com.hazelcast.transaction.TransactionalTask;
-import com.hazelcast.transaction.TransactionalTaskContext;
+import com.hazelcast.transaction.TransactionContext;
+import com.hazelcast.transaction.TransactionOptions;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 import java.util.UUID;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 
 import static org.junit.Assert.assertEquals;
@@ -118,18 +118,28 @@ public class MapTransactionTest {
                 final Integer key = random.nextInt(keyCount);
                 final long increment = random.nextInt(100);
 
-                targetInstance.executeTransaction(new TransactionalTask<Object>() {
-                    @Override
-                    public Object execute(TransactionalTaskContext txContext) throws TransactionException {
-                        TransactionalMap<Integer, Long> map = txContext.getMap(mapName);
-                        Long current = map.getForUpdate(key);
-                        Long update = current + increment;
-                        map.put(key, update);
-                        return null;
+                final TransactionOptions options = new TransactionOptions().setTimeout(5, TimeUnit.MINUTES);
+                final TransactionContext txContext = targetInstance.newTransactionContext(options);
+                try {
+                    txContext.beginTransaction();
+                    TransactionalMap<Integer, Long> map = txContext.getMap(mapName);
+                    Long current = map.getForUpdate(key);
+                    Long update = current + increment;
+                    map.put(key, update);
+                    txContext.commitTransaction();
+                    increment(key, increment);
+                } catch (Exception e) {
+                    System.err.println("------------------------------------------" +
+                            "\n ------ " + e.getMessage() + " ------------" +
+                            "\n ------------------------------------------");
+                    try {
+                        txContext.rollbackTransaction();
+                    } catch (Exception e1) {
+                        System.err.println("*******************************************" +
+                                "\n ****** " + e1.getMessage() + " ************" +
+                                "\n *******************************************");
                     }
-                });
-
-                increment(key, increment);
+                }
 
                 if (iteration % logFrequency == 0) {
                     log.info(Thread.currentThread().getName() + " At iteration: " + iteration);
