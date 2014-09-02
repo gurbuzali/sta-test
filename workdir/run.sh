@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#provisioner --scale 4
+provisioner --scale 4
 provisioner --restart
 
 coordinator     --workerVmOptions "-ea -server -Xms2G -Xmx2G -XX:+PrintGC -XX:+HeapDumpOnOutOfMemoryError" \
