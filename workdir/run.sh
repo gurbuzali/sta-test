@@ -3,7 +3,7 @@
 provisioner --scale 25
 provisioner --restart
 
-coordinator --memberWorkerCount 25 \
+coordinator --memberWorkerCount 10 \
 	--clientWorkerCount 100 \
 	--duration 10m \
 	--workerClassPath   '../target/*.jar' \
