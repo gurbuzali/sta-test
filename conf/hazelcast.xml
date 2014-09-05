@@ -16,4 +16,24 @@
         </join>
     </network>
 
+    <map name="MapStore*">
+        <map-store enabled="true">
+            <class-name>com.hazelcast.stabilizer.tests.map.helpers.MapStoreWithCounter</class-name>
+            <write-delay-seconds>5</write-delay-seconds>
+        </map-store>
+    </map>
+
+    <map name="MaxSizeMap*">
+        <eviction-policy>LRU</eviction-policy>
+        <max-size policy="PER_NODE">1000</max-size>
+        <eviction-percentage>25</eviction-percentage>
+        <min-eviction-check-millis>0</min-eviction-check-millis>
+    </map>
+
+    <map name="basicMap*">
+        <backup-count>0</backup-count>
+        <async-backup-count>0</async-backup-count>
+        <statistics-enabled>false</statistics-enabled>
+    </map>
+
 </hazelcast>
