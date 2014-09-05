@@ -1,10 +1,10 @@
 #!/bin/bash
 
-provisioner --scale 30
+provisioner --scale 25
 provisioner --restart
 
-coordinator --memberWorkerCount 6 \
-	--clientWorkerCount 150 \
+coordinator --memberWorkerCount 25 \
+	--clientWorkerCount 100 \
 	--duration 60m \
 	--workerClassPath   '../target/*.jar' \
 	--clientHzFile      ../conf/client-hazelcast.xml \
