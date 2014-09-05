@@ -5,7 +5,7 @@ provisioner --restart
 
 coordinator --memberWorkerCount 6 \
 	--clientWorkerCount 150 \
-	--duration 40m \
+	--duration 60m \
 	--workerClassPath   '../target/*.jar' \
 	--clientHzFile      ../conf/client-hazelcast.xml \
     --hzFile            ../conf/hazelcast.xml \
